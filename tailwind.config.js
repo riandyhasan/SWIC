@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      heading: 'Coolvetica',
+      body: ['Inter', 'sans-serif']
+    }
   },
   plugins: [],
 }
