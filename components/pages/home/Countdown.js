@@ -7,11 +7,12 @@ const TextCountdown = ({p, tens, ones}) => {
     return(
         <Box h='100%'>
             <Flex>                
-            <Square bg='white' size='1.9em' borderRadius='0.4rem' fontSize='1.5em' fontWeight='semibold' marginRight='0.3em' color='black'>{tens}</Square>
-            <Square bg='white' size='1.9em' borderRadius='0.4rem' fontSize='1.5em' fontWeight='semibold' color='black'>{ones}</Square>            
+            
+            <Square bg='white' size='1.9em' borderRadius='0.4rem' fontSize={['1em','1.3em','1.3em','1.5em']} fontWeight='semibold' marginRight='0.3em' color='black'>{tens}</Square>
+            <Square bg='white' size='1.9em' borderRadius='0.4rem' fontSize={['1em','1.3em','1.3em','1.5em']} fontWeight='semibold' color='black'>{ones}</Square>         
                 <Flex alignItems='flex-end'>
 
-                    <Text mx='0.3em' fontWeight='bold' fontSize='1.4em'>{p}</Text>
+                    <Text mx='0.3em' fontWeight='bold' fontSize={['0.8em', '0.8em', '1em', '1em']}>{p}</Text>
                 </Flex>
             </Flex>
         </Box>
@@ -50,12 +51,11 @@ export default function Countdown() {
     });
 
     return (
-        <Flex>
+        <Flex justifyContent={['center', 'center', 'center', 'start']}>
             <TextCountdown p='D' tens={Math.floor(time.day/10)} ones={time.day%10}/>
             <TextCountdown p='H' tens={Math.floor(time.hour/10)} ones={time.hour%10}/>
             <TextCountdown p='M' tens={Math.floor(time.minute/10)} ones={time.minute%10}/>
             <TextCountdown p='S' tens={Math.floor(time.second/10)} ones={time.second%10}/>
-            
         </Flex>
     )
 }
