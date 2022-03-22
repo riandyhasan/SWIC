@@ -27,7 +27,7 @@ export default function Benefits() {
     let s1 = ['full', 'full', 'full', '40rem']
     let s2 = ['0.5em', '2.5m', '4em', '0']
     return(
-        <Flex justifyContent='space-between' alignItems='center' color='white' mt={['1rem', '2em', '2em', '3em']}>
+        <Flex justifyContent='space-between' alignItems='center' color='white' mt={['0.6rem', '1em', '2em', '3em']}>
             <Square size={s} display={['none', 'none', 'none', 'flex']}>
                 <Image 
                     src="/assets/images/pattern/benefits-left.png"
