@@ -1,13 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Coolvetica, 'Inter', sans-serif;
 }
 
 a {
@@ -18,3 +13,43 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+@font-face {
+  font-family: 'Coolvetica Compressed Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Coolvetica Compressed Regular'), url(../public/assets/fonts/Coolvetica/coolvetica-compressed-rg.woff) format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Coolvetica Condensed Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Coolvetica Condensed Regular'), url(../public/assets/fonts/Coolvetica/coolvetica-condensed-rg.woff) format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Coolvetica Crammed Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Coolvetica Crammed Regular'), url(../public/assets/fonts/Coolvetica/coolvetica-crammed-rg.woff) format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Coolvetica';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Coolvetica Regular'), url(../public/assets/fonts/Coolvetica/coolvetica-rg.woff) format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Coolvetica';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Coolvetica Regular Italic'), url(../public/assets/fonts/Coolvetica/coolvetica-rg-it.woff) format('woff');
+  }
