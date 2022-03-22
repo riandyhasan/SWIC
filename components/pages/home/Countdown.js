@@ -25,16 +25,6 @@ export default function Countdown() {
     const [time, setTime] = useState({});
 
     const count = () => {
-        // setInterval(() => {
-        //     let ctime = (finishTime.getTime() - currtime.getTime()) / 1000;
-    
-        //     let day = Math.floor(ctime/86400)
-        //     let hour = Math.floor((ctime-(day*86400)) / 3600);
-        //     let minute = Math.floor((ctime-day*86400-hour*3600) / 60);
-        //     let second = Math.floor((ctime-day*86400-hour*3600-minute*60));
-    
-        //     setTime({day: day, hour: hour, minute: minute, second: second});
-        // }, 1000);
         let ctime = (finishTime.getTime() - currtime.getTime()) / 1000;
     
             let day = Math.floor(ctime/86400)
