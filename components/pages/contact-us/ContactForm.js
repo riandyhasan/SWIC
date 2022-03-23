@@ -4,7 +4,7 @@ import { useState } from "react";
 const SmallInput = ({title, placeHolder, val, changeData}) => {
     return(
         <GridItem colSpan={1} fontWeight='semibold'>
-            <Text>{title}</Text>
+            <Text fontWeight='medium' fontFamily={'Coolvetica'}>{title}</Text>
             <Input id={title} value={val} onChange={changeData} placeholder="Lorem Ipsum"/>
         </GridItem>
     )
@@ -72,7 +72,7 @@ export function ContactForm() {
                 <SmallInput title='Phone Number' val={phoneNumber} changeData={onChangeData}/>
                 
                 <GridItem colSpan={2} rowSpan={3} fontWeight='semibold'>
-                    <Text>Inquiries</Text>
+                    <Text fontWeight='medium' fontFamily={'Coolvetica'}>Inquiries</Text>
                     <Textarea id="Inquiries" val={inquiries} placeholder="Lorem Ipsum" h='full' onChange={onChangeData}/>
                 </GridItem>
             </Grid>
