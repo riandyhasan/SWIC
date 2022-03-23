@@ -19,7 +19,7 @@ const TextCountdown = ({p, tens, ones}) => {
     )
 }
 export default function Countdown() {   
-    const finishTime = new Date("2022-03-23");
+    const finishTime = new Date("2022-03-31");
     const currtime = new Date();
     const totalDays = Math.floor((finishTime.getTime() - currtime.getTime()) / 86400000);
     const [time, setTime] = useState({});
