@@ -32,8 +32,8 @@ const LINKS = [
 
 export default function Header({ ...props }) {
   const router = useRouter();
-
   const [menuOpen, setMenuOpen] = useState(false);
+
 
   return (
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" w="100%" py="0.3em" paddingLeft={["2em", "4em", "4em"]} paddingRight={["2em", "4em", "4em"]} {...props}>
@@ -55,12 +55,24 @@ export default function Header({ ...props }) {
                   fontWeight={500}
                   cursor="pointer"
                   textAlign="center"
+                  sx={{
+                    background: router.pathname == link.path ? "linear-gradient(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)" : "black",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    BackgroundClip: "text",
+                    TextFillColor: "transparent"
+                  }}
                 >
                   {link.name}
                 </Heading>
               </Link>
             </Box>
           ))}
+        <Link href="/login">
+          <Box bg={router.pathname == "/login" || router.pathname == "/signup" ? "linear-gradient(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)" : "primary.blue"} fontFamily="Coolvetica" px="1rem" py="0.65rem" color="white" borderRadius="40px" fontSize="0.85em" cursor="pointer">
+          Login | Sign Up
+          </Box>
+        </Link>
         </Stack>
       </Box>
     </Flex>
