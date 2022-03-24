@@ -91,6 +91,7 @@ export default function Footer() {
         <a
           href="https://www.instagram.com/itb1920/"
           target="_blank"
+          rel="noreferrer"
           style={{ textDecoration: "none" }}
         >
           <Flex gridGap="1rem" cursor="pointer">
@@ -103,6 +104,7 @@ export default function Footer() {
         <a
           href="https://www.instagram.com/itb1920/"
           target="_blank"
+          rel="noreferrer"
           style={{ textDecoration: "none" }}
         >
           <Flex gridGap="1rem" cursor="pointer">
