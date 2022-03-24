@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { app } from "../../../utils/firebase";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import Link from "next/link"
 
 
 export default function ResetPassword(props) {
@@ -73,8 +74,8 @@ if (err && err != ""){
                 </Box>
             </Flex>
             <Flex flexDir="column" w="100%" justifyContent="center" alignItems="center" pt={{base:"4rem", md:"0rem"}}>
-            <Heading color="primary.red" fontWeight={400} size="2xl">Reset Password</Heading>
-            <Text color="primary.blue" fontSize="0.85em" fontWeight={500} mb="2rem" mt="1rem" maxW={{base:"60%", md:"100%"}} textAlign="center">Enter your registered email below to receive password reset instruction</Text>
+            <Heading color="primary.red" fontWeight={400} size="2xl">{props.isSubmit ? "Email has been sent!" : "Reset Password"}</Heading>
+            <Text color="primary.blue" fontSize="0.85em" fontWeight={500} mb="2rem" mt="1rem" maxW={{base:"60%", md:"100%"}} textAlign="center">{props.isSubmit ? "Please check your inbox and follow the instruction to reset your password" : "Enter your registered email below to receive password reset instruction"}</Text>
             </Flex>
             <Flex  w="100%" justifyContent="space-between" alignItems="center" pb={{base:"4rem", md:"0rem"}}>
                 <Image src="/assets/images/background/resetpass.png" maxW="100px" d={{base:"none", md:"block"}}/>
@@ -117,12 +118,12 @@ if (err && err != ""){
                             </Box>
                             <Text color="primary.blue" mt="2rem" mb={{base:"2rem", md:"0rem"}} textAlign="center">
                             Don’t receive the mail?  {" "}
-            <a
-                href="/resetpassword"
-                style={{ textDecoration: "none", color: "#EB222A", fontWeight: "bold" }}
-            >
-              Resend
-            </a>
+                            <span
+            style={{ color: "#EB222A", fontWeight: "bold", cursor:"pointer" }}
+            onClick={() => props.setSubmit(false)}
+          >
+                          Resend
+          </span>
           </Text>
                         </Flex>
                   :

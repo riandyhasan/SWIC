@@ -26,6 +26,7 @@ import {
   getAdditionalUserInfo
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import Link from "next/link"
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -223,12 +224,16 @@ export default function SignUp() {
           </Heading>
           <Text color="primary.blue">
           Already have an account? {" "}
-            <a
+            <Link
               href="/login"
-              style={{ textDecoration: "none", color: "#EB222A", fontWeight: "bold" }}
-            >
-              Log In
-            </a>
+            >            
+            <span
+            style={{ color: "#EB222A", fontWeight: "bold", cursor:"pointer" }}
+          >
+            Log In
+
+          </span>
+            </Link>
           </Text>
           </Flex>
         

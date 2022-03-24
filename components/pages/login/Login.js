@@ -18,6 +18,7 @@ import { app } from "../../../utils/firebase";
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useRouter } from "next/router";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import Link from "next/link"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -169,12 +170,15 @@ export default function Login() {
           </Heading>
           <Text color="primary.blue">
           Don’t have an account? {" "}
-            <a
+            <Link
               href="/signup"
-              style={{ textDecoration: "none", color: "#EB222A", fontWeight: "bold" }}
+            >
+                        <span
+              style={{ color: "#EB222A", fontWeight: "bold", cursor:"pointer" }}
             >
               Sign Up
-            </a>
+            </span>
+            </Link>
           </Text>
           </Flex>
         
@@ -258,12 +262,13 @@ export default function Login() {
           </Flex>
           <Text color="primary.blue" mt="2rem" mb={{base:"2rem", md:"0rem"}}>
           Forgot your password? {" "}
-            <a
-              href="/resetpassword"
-              style={{ textDecoration: "none", color: "#EB222A", fontWeight: "bold" }}
+          <Link href="/resetpassword">
+            <span
+              style={{ color: "#EB222A", fontWeight: "bold", cursor:"pointer" }}
             >
               Reset password
-            </a>
+            </span>
+            </Link>
           </Text>
         </Flex>
       </Flex>
