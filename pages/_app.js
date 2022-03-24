@@ -14,7 +14,8 @@ const theme = extendTheme({
     },
     secondary: {
       blue:"3A45B1",
-      yellow:"#FFD600"
+      yellow:"#FFD600",
+      gray:"#D8D7D7"
     }
   },
 });
