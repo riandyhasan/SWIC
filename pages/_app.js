@@ -9,14 +9,14 @@ const theme = extendTheme({
   },
   colors: {
     primary: {
-      blue:"#1C1D60",
-      red:"#EB222A",
+      blue: "#1C1D60",
+      red: "#EB222A",
     },
     secondary: {
-      blue:"3A45B1",
-      yellow:"#FFD600",
-      gray:"#D8D7D7"
-    }
+      blue: "3A45B1",
+      yellow: "#FFD600",
+      gray: "#D8D7D7",
+    },
   },
 });
 

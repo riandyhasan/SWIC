@@ -12,11 +12,11 @@ export default function Home() {
         <title>SWIC</title>
       </Head>
       <Box
-        w='100%'
+        w="100%"
         bgImg="url('/assets/images/background/home.png')"
         bgRepeat="no-repeat"
-        bgSize="cover">
-
+        bgSize="cover"
+      >
         <Jumbotron />
         <Benefits />
         <Sponsor />
