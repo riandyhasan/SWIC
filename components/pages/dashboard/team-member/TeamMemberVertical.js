@@ -1,5 +1,4 @@
-import { Box, Flex, Heading, Text, Grid, GridItem, Input, Textarea } from "@chakra-ui/react"
-import { MdCancel, MdCheckCircle } from "react-icons/md";
+import { Box, Flex, Text } from "@chakra-ui/react"
 import AdditionalData from "./AdditionalData";
 import Data from "./Data";
 import Member from "./Member";

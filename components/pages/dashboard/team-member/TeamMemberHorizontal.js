@@ -34,10 +34,10 @@ export function TeamMemberHorizontal({data}) {
                     </Grid>
                 </Flex>
             </GridItem>
-            <GridItem rowSpan={[1, 1, 1, 1]} colSpan={[1, 1, 3, 3]}>
+            <GridItem rowSpan={[, , 1, 1]} colSpan={[, , 3, 3]}>
                 <Text fontFamily='Coolvetica'>Additional Data</Text>
                 <Box h='full' w='full'>
-                    <Box w='full' h={['62%', 'full', '2.4rem', '2.4rem']}>
+                    <Box w='full' h={[, , '2.4rem', '2.4rem']}>
                         <AdditionalData isUploaded={data.AdditionalData}/>
                     </Box>
                 </Box>

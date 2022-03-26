@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Grid, GridItem, Input, Textarea } from "@chakra-ui/react"
+import { Flex,  Text } from "@chakra-ui/react"
 import { MdCancel, MdCheckCircle } from "react-icons/md";
 
 export default function AdditionalData({isUploaded}) {
@@ -8,5 +8,4 @@ export default function AdditionalData({isUploaded}) {
             <Text fontSize='0.8em' fontWeight='medium' pl={'1em'}>ID Card</Text>
         </Flex>
     )
-
 }

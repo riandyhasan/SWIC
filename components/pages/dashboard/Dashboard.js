@@ -1,43 +1,17 @@
 import { Box, Flex, Heading, Text, Grid, Square, GridItem, Input, Textarea } from "@chakra-ui/react"
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Notification from "./notification/Notification";
 import { TeamMemberHorizontal } from "./team-member/TeamMemberHorizontal";
 import { TeamMemberVertical } from "./team-member/TeamMemberVertical";
 
-const Nav = () => {
-    const [isOnTeam, setIsOnTeam] = useState(true);
-    const [isOnNotif, setIsOnNotif] = useState(false);
-    const [isOnSub, setIsOnSub] = useState(false);
-
+const Nav = ({onClick, isOnTeam, isOnNotif, isOnSub}) => {
     let fs = ["0.7em", "0.7em", "0.7em", "1em"]
     let w = ['full', '18rem', '18rem', '26rem']
 
-    const onClickHandler = (e) => {
-        switch(e.target.id) {
-            case "teamMember":
-                setIsOnTeam(true);
-                setIsOnNotif(false);
-                setIsOnSub(false)
-                break;
-            case "notification":
-                setIsOnTeam(false);                    
-                setIsOnNotif(true);
-                setIsOnSub(false)
-                break;
-            case "submission":
-                setIsOnTeam(false);
-                setIsOnNotif(false);
-                setIsOnSub(true);
-                break;
-            default:
-                break;
-        }
-        // console.log(e.target)
-    }
-
     const MiniNav = ({id, name, isOn}) => {
         return(
-            <Flex cursor='pointer' onClick={onClickHandler} flexDirection='column' alignItems='center'>
+            <Flex cursor='pointer' onClick={onClick} flexDirection='column' alignItems='center'>
                 <Text fontSize={fs} fontWeight={isOn && 'semibold'} id={id}>{name}</Text>
                 {isOn && <Box id={id} h='0.2em' w='full' bg='primary.blue' borderRadius='full'></Box>}
             </Flex>
@@ -68,6 +42,10 @@ const useWindowSize = () => {
 
 
 export default function Dashboard() {
+    const [isOnTeam, setIsOnTeam] = useState(true);
+    const [isOnNotif, setIsOnNotif] = useState(false);
+    const [isOnSub, setIsOnSub] = useState(false);
+
     const width = useWindowSize();
 
     let px = ['2em', '2em', '2em', '5em']
@@ -76,6 +54,29 @@ export default function Dashboard() {
     let h = ['45em', '55em', '50vw', '45vw']
     let h2 = ['31em', '32em', '20em', '24em']
     let fd = ['column', 'column', 'row', 'row']
+
+    const onClickHandler = (e) => {
+        switch(e.target.id) {
+            case "teamMember":
+                setIsOnTeam(true);
+                setIsOnNotif(false);
+                setIsOnSub(false)
+                break;
+            case "notification":
+                setIsOnTeam(false);                    
+                setIsOnNotif(true);
+                setIsOnSub(false)
+                break;
+            case "submission":
+                setIsOnTeam(false);
+                setIsOnNotif(false);
+                setIsOnSub(true);
+                break;
+            default:
+                break;
+        }
+        // console.log(e.target)
+    }
 
     let dataItem = {
         Data: {ID: 18220092, teamName: 'SWIC', teamCode: 16520491},
@@ -94,9 +95,11 @@ export default function Dashboard() {
             <Box w='full' h='full' px={px} py={py} >
                 <Box w='full' h={h2}>
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Dashboard</Heading>
-                    <Nav />
-                    {width < 767 ? <TeamMemberVertical data={dataItem} /> : <TeamMemberHorizontal data={dataItem} />}                    
-                    <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>
+                    <Nav onClick={onClickHandler} isOnTeam={isOnTeam} isOnNotif={isOnNotif} isOnSub={isOnSub}/>
+                    
+                    {width < 767 ? isOnTeam && <TeamMemberVertical data={dataItem} /> : isOnTeam && <TeamMemberHorizontal data={dataItem} />}                    
+                    {isOnTeam && <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>}
+                    {isOnNotif && <Notification />}
                 </Box>
             </Box>
         </Flex>

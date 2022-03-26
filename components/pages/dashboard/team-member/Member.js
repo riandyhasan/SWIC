@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, Grid, GridItem, Input, Textarea } from "@chakra-ui/react"
+import { Flex, Text } from "@chakra-ui/react"
 import { MdCancel, MdCheckCircle } from "react-icons/md";
 
 export default function Member({name, isTeamLeader, isVerified, height, mb, fsName, fsTeamLeader}) {
