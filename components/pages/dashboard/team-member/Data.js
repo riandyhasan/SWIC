@@ -6,7 +6,7 @@ export default function Data({id, teamName, teamCode, pb, mb}) {
     let fw = 'semibold'
     let fw2 = 'medium'
     return(
-        <Flex flexDirection='column' justifyContent='space-between' h='full' w='full' bg='yellow.200' borderRadius='0.3em' p='8px' pb={pb}>
+        <Flex flexDirection='column' justifyContent='space-between' h='full' w='full' border='2px' borderColor='secondary.gray' borderRadius='0.3em' p='8px' pb={pb}>
             <Box pb={pb}>
                 <Text fontSize={fsTitle} fontWeight={fw}>ID</Text>
                 <Text fontSize={fsValue} fontWeight={fw2}>18220092</Text>

@@ -5,23 +5,50 @@ import { TeamMemberHorizontal } from "./team-member/TeamMemberHorizontal";
 import { TeamMemberVertical } from "./team-member/TeamMemberVertical";
 
 const Nav = () => {
-    let fs = ["0.6em", "0.6em", "0.7em", "1em"]
+    const [isOnTeam, setIsOnTeam] = useState(true);
+    const [isOnNotif, setIsOnNotif] = useState(false);
+    const [isOnSub, setIsOnSub] = useState(false);
+
+    let fs = ["0.7em", "0.7em", "0.7em", "1em"]
     let w = ['full', '18rem', '18rem', '26rem']
 
+    const onClickHandler = (e) => {
+        switch(e.target.id) {
+            case "teamMember":
+                setIsOnTeam(true);
+                setIsOnNotif(false);
+                setIsOnSub(false)
+                break;
+            case "notification":
+                setIsOnTeam(false);                    
+                setIsOnNotif(true);
+                setIsOnSub(false)
+                break;
+            case "submission":
+                setIsOnTeam(false);
+                setIsOnNotif(false);
+                setIsOnSub(true);
+                break;
+            default:
+                break;
+        }
+        // console.log(e.target)
+    }
+
+    const MiniNav = ({id, name, isOn}) => {
+        return(
+            <Flex cursor='pointer' onClick={onClickHandler} flexDirection='column' alignItems='center'>
+                <Text fontSize={fs} fontWeight={isOn && 'semibold'} id={id}>{name}</Text>
+                {isOn && <Box id={id} h='0.2em' w='full' bg='primary.blue' borderRadius='full'></Box>}
+            </Flex>
+        )
+    }
+
     return(
-        <Flex justifyContent='space-between' w={w} bg='secondary.gray' mt='0.3em' mb='1.2em'>
-            <Flex flexDirection='column' alignItems='center'>
-                <Text fontSize={fs}>Team Member</Text>
-                <Box h='0.2em' w='full' bg='primary.blue'></Box>
-            </Flex>
-            <Flex flexDirection='column' alignItems='center'>
-                <Text fontSize={fs}>Notification</Text>
-                <Box h='0.2em' w='full' bg='primary.blue'></Box>
-            </Flex>
-            <Flex flexDirection='column' alignItems='center'>
-                <Text fontSize={fs}>Submission</Text>
-                <Box h='0.2em' w='full' bg='primary.blue'></Box>
-            </Flex>
+        <Flex justifyContent='space-between' w={w} mt='0.3em' mb='1.2em'>
+            <MiniNav id='teamMember' name='Team Member' isOn={isOnTeam}/>
+            <MiniNav id='notification' name='Notification' isOn={isOnNotif}/>
+            <MiniNav id='submission' name='Submission' isOn={isOnSub}/>
         </Flex>
     )
 };
@@ -64,8 +91,8 @@ export default function Dashboard() {
         <Flex flexDirection={fd} h={h} w='full'>
             <img src={`${width < 767 ? "/assets/images/background/dashboard-top.png" : "/assets/images/background/dashboard.png"}`} alt="picture" />
             <img src={`${width < 767 ? '/assets/images/pattern/dashboard-horizontal.png' : '/assets/images/pattern/dashboard-center.png'}`} alt="picture" />
-            <Box w='full' h='full' bg='red.100' px={px} py={py} >
-                <Box bg='green.200' w='full' h={h2}>
+            <Box w='full' h='full' px={px} py={py} >
+                <Box w='full' h={h2}>
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Dashboard</Heading>
                     <Nav />
                     {width < 767 ? <TeamMemberVertical data={dataItem} /> : <TeamMemberHorizontal data={dataItem} />}                    
