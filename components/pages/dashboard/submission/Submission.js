@@ -20,21 +20,21 @@ export default function Submission({isUploaded}) {
                             <MdFileUpload color="white"/>
                             <Text pl='3px'>Upload</Text>
                         </>}
-                        </Square>
-                        {isUploaded && 
-                            <Box pl='0.5em'>
-                                <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>Submission_SWIC2022.pdf</Text>
-                                <Flex>
-                                    <svg width="0" height="0">
-                                        <linearGradient id="color-gradient" x1="0%" y1="100%" x2="100%" y2="100%">
-                                            <stop stopColor="#EB222A" offset="0%" />
-                                            <stop stopColor="#1C1D60" offset="100%" />
-                                        </linearGradient>
-                                    </svg>
-                                    <MdCheckCircle style={{ fill: "url(#color-gradient)" }} />
-                                    <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} pl='2px' fontWeight='medium'>Uploaded!</Text>
-                                </Flex>
-                            </Box>}
+                    </Square>
+                    {isUploaded && 
+                        <Box pl='0.5em'>
+                            <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>Submission_SWIC2022.pdf</Text>
+                            <Flex>
+                                <svg width="0" height="0">
+                                    <linearGradient id="color-gradient" x1="0%" y1="100%" x2="100%" y2="100%">
+                                        <stop stopColor="#EB222A" offset="0%" />
+                                        <stop stopColor="#1C1D60" offset="100%" />
+                                    </linearGradient>
+                                </svg>
+                                <MdCheckCircle style={{ fill: "url(#color-gradient)" }} />
+                                <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} pl='2px' fontWeight='medium'>Uploaded!</Text>
+                            </Flex>
+                        </Box>}
                 </Flex>
             </Box>
             <Square w='10em' py='8px' bg='primary.blue' borderRadius='full' color='white' fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} mt='1.5em'>Submit</Square>
