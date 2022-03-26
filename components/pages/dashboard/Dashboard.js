@@ -45,26 +45,41 @@ const Nav = ({onClick, isOnTeam, isOnNotif, isOnSub}) => {
     )
 };
 
-const useWindowSize = () => {
-    const [width, setWidth] = useState();
+// const useWindowSize = () => {
+//     const [width, setWidth] = useState();
     
+//     useEffect(() => {
+//         const handleResize = () => {
+//             setWidth(window.innerWidth);
+//         };
+//         window.addEventListener("resize", handleResize);
+//         console.log(window.innerWidth);
+//     }, []);
+//     return width;
+// };
+
+const useDeviceSize = () => {
+    const [width, setWidth] = useState(0);
+
+    const handleWindowResize = () => {
+        setWidth(window.innerWidth);
+    }
+
     useEffect(() => {
-        const handleResize = () => {
-            setWidth(window.innerWidth);
-        };
-        window.addEventListener("resize", handleResize);
-        console.log(window.innerWidth);
+        handleWindowResize();
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
+
     return width;
-};
+}
 
 
 export default function Dashboard() {
     const [isOnTeam, setIsOnTeam] = useState(true);
     const [isOnNotif, setIsOnNotif] = useState(false);
     const [isOnSub, setIsOnSub] = useState(false);
-
-    const width = useWindowSize();
+    const width = useDeviceSize();
 
     let px = ['2em', '2em', '2em', '5em']
     let py = ['10px', '', '1em', '3em']
