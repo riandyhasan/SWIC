@@ -13,8 +13,25 @@ const Nav = ({onClick, isOnTeam, isOnNotif, isOnSub}) => {
     const MiniNav = ({id, name, isOn}) => {
         return(
             <Flex cursor='pointer' onClick={onClick} flexDirection='column' alignItems='center'>
-                <Text fontSize={fs} fontWeight={isOn && 'semibold'} id={id}>{name}</Text>
-                {isOn && <Box id={id} h='0.2em' w='full' bg='primary.blue' borderRadius='full'></Box>}
+                <Text 
+                fontSize={fs} 
+                fontWeight={isOn && 'semibold'} 
+                sx={isOn ? {
+                    background:"linear-gradient(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    BackgroundClip: "text",
+                    TextFillColor: "transparent",
+                  } : {}} id={id}>{name}</Text>
+                {isOn && 
+                <Box 
+                id={id} 
+                h='0.2em' 
+                w='full'  
+                sx={{
+                    background:"linear-gradient(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+                }}
+                borderRadius='full' />}
             </Flex>
         )
     }
