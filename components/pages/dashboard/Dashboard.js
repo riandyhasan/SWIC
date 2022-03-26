@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text, Grid, Square, GridItem, Input, Textarea } fro
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Notification from "./notification/Notification";
+import Submission from "./submission/Submission";
 import { TeamMemberHorizontal } from "./team-member/TeamMemberHorizontal";
 import { TeamMemberVertical } from "./team-member/TeamMemberVertical";
 
@@ -100,6 +101,7 @@ export default function Dashboard() {
                     {width < 767 ? isOnTeam && <TeamMemberVertical data={dataItem} /> : isOnTeam && <TeamMemberHorizontal data={dataItem} />}                    
                     {isOnTeam && <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>}
                     {isOnNotif && <Notification />}
+                    {isOnSub && <Submission isUploaded={false} />}
                 </Box>
             </Box>
         </Flex>

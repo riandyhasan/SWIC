@@ -8,8 +8,8 @@ const Notif = () => {
                 <FaBell size='full'/>
             </Flex>
             <Box w='full' pl='10px'>
-                <Text w='full' fontSize={['0.7em', '0.7em', '0.9em', '1em']} fontWeight='medium'>Lorem Ipsum</Text>
-                <Text w='full' fontSize={['0.6em', '0.6em', '0.8em', '0.8em']}>
+                <Text w='full' fontSize={['0.7em', '0.7em', '0.9em', '0.9em']} fontWeight='medium'>Lorem Ipsum</Text>
+                <Text w='full' fontSize={['0.6em', '0.6em', '0.7em', '0.7em']}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Etiam laoreet eu nisi sed pretium. Sed malesuada turpis vel sem tempor,
                     eget vulputate felis gravida. Cras condimentum nibh et blandit suscipit. 
