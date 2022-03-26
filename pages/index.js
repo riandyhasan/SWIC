@@ -1,6 +1,9 @@
 import Head from "next/head";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Layout from "../components/navigation/Layout";
+import Jumbotron from "../components/pages/home/Jumbotron";
+import Benefits from "../components/pages/home/Benefits";
+import Sponsor from "../components/pages/home/Sponsor";
 
 export default function Home() {
   return (
@@ -8,17 +11,16 @@ export default function Home() {
       <Head>
         <title>SWIC</title>
       </Head>
-
-      <Flex
-        justify="center"
-        align="center"
+      <Box
         w="100%"
-        minH="100vh"
-        fontSize="5em"
-        direction="column"
+        bgImg="url('/assets/images/background/home.png')"
+        bgRepeat="no-repeat"
+        bgSize="cover"
       >
-        Toriq Ganteng
-      </Flex>
+        <Jumbotron />
+        <Benefits />
+        <Sponsor />
+      </Box>
     </Layout>
   );
 }

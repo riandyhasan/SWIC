@@ -30,56 +30,50 @@ export default function Footer() {
       alignItems="center"
     >
       <Box bg="white" p="1.2rem" borderRadius="30px" w="70%">
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        gridGap="0.5rem"
-      >
-        <Image
-          src="/assets/images/logo/logo-swic.png"
-          height={64}
-          width={130}
-        />
-        <Image
-          src="/assets/images/logo/logo-T20.png"
-          height={95}
-          width={136}
-        />
-      </Flex>
+        <Flex alignItems="center" justifyContent="center" gridGap="0.5rem">
+          <Image
+            src="/assets/images/logo/logo-swic.png"
+            height={64}
+            width={130}
+          />
+          <Image
+            src="/assets/images/logo/logo-T20.png"
+            height={95}
+            width={136}
+          />
+        </Flex>
       </Box>
       <Box p="1.5rem" bg="white" borderRadius="30px">
-          <Heading color="primary.blue" size="sm">Organized by</Heading>
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        gridGap="0.5rem"
-      >
-        <Image
-          src="/assets/images/logo/logo-sccic.png"
-          height={58}
-          width={120}
-        />
-        <Image
-          src="/assets/images/logo/logo-pii.png"
-          height={72}
-          width={72}
-        />
-        <Image
-          src="/assets/images/logo/logo-ITB.png"
-          height={60}
-          width={60}
-        />
-        <Image
-          src="/assets/images/logo/logo-apic.png"
-          height={69}
-          width={45}
-        />
-        <Image
-          src="/assets/images/logo/logo-ieee.png"
-          height={45}
-          width={137}
-        />
-      </Flex>
+        <Heading color="primary.blue" size="sm">
+          Organized by
+        </Heading>
+        <Flex alignItems="center" justifyContent="center" gridGap="0.5rem">
+          <Image
+            src="/assets/images/logo/logo-sccic.png"
+            height={58}
+            width={120}
+          />
+          <Image
+            src="/assets/images/logo/logo-pii.png"
+            height={72}
+            width={72}
+          />
+          <Image
+            src="/assets/images/logo/logo-ITB.png"
+            height={60}
+            width={60}
+          />
+          <Image
+            src="/assets/images/logo/logo-apic.png"
+            height={69}
+            width={45}
+          />
+          <Image
+            src="/assets/images/logo/logo-ieee.png"
+            height={45}
+            width={137}
+          />
+        </Flex>
       </Box>
       <Flex
         justifyContent="flex-end"
@@ -88,30 +82,32 @@ export default function Footer() {
         pr="6rem"
       >
         <Flex flexDir="column" gridGap="1rem">
-        <a
-          href="https://www.instagram.com/itb1920/"
-          target="_blank"
-          style={{ textDecoration: "none" }}
-        >
-          <Flex gridGap="1rem" cursor="pointer">
+          <a
+            href="https://www.instagram.com/itb1920/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <Flex gridGap="1rem" cursor="pointer">
               <Box bg="white" p="0.2rem" borderRadius="50px">
-            <AiOutlineInstagram size="1.5em" color="#1C1D60" />
-            </Box>
-            <Text>@swic</Text>
-          </Flex>
-        </a>
-        <a
-          href="https://www.instagram.com/itb1920/"
-          target="_blank"
-          style={{ textDecoration: "none" }}
-        >
-          <Flex gridGap="1rem" cursor="pointer">
-          <Box bg="white" p="0.2rem" borderRadius="50px">
-            <AiFillLinkedin size="1.5em" color="#1C1D60"/>
-            </Box>
-            <Text>SWICC</Text>
-          </Flex>
-        </a>
+                <AiOutlineInstagram size="1.5em" color="#1C1D60" />
+              </Box>
+              <Text>@swic</Text>
+            </Flex>
+          </a>
+          <a
+            href="https://www.instagram.com/itb1920/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <Flex gridGap="1rem" cursor="pointer">
+              <Box bg="white" p="0.2rem" borderRadius="50px">
+                <AiFillLinkedin size="1.5em" color="#1C1D60" />
+              </Box>
+              <Text>SWICC</Text>
+            </Flex>
+          </a>
         </Flex>
       </Flex>
     </Box>
