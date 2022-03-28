@@ -75,7 +75,7 @@ const useDeviceSize = () => {
 }
 
 
-export default function Dashboard() {
+export default function Dashboard({profile, team}) {
     const [isOnTeam, setIsOnTeam] = useState(true);
     const [isOnNotif, setIsOnNotif] = useState(false);
     const [isOnSub, setIsOnSub] = useState(false);
