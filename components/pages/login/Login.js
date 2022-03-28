@@ -123,7 +123,7 @@ export default function Login() {
   };
 
   return (
-    <Flex w="100%" minH="100vh">
+    <Flex w="100%" minH="100vh" flexDir={{base:"column", md:"row"}}>
       <Flex
         display={{ base: "none", md: "flex" }}
         alignItems="flex-start"
@@ -176,6 +176,24 @@ export default function Login() {
               erat volutpat.
             </Text>
           </Box>
+        </Box>
+      </Flex>
+      <Flex
+        display={{ base: "flex", md: "none" }}
+        alignItems="center"
+        justifyContent="flex-end"
+        bgImage="url('/assets/images/background/login-mobile.png')"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize="cover"
+        w="100%"
+        h="25vh"
+        pl="2.5rem"
+        pr={{base:"1rem", sm:"2.5rem", md:"0rem"}}
+      >
+        <Box color="white">
+          <Heading fontWeight={400} fontSize="1.1em">Welcome to</Heading>
+          <Heading fontWeight={400}>Smarter World Innovation Challenge (SWIC) 2022</Heading>
         </Box>
       </Flex>
       <Flex

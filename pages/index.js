@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Layout from "../components/navigation/Layout";
 import Jumbotron from "../components/pages/home/Jumbotron";
 import Benefits from "../components/pages/home/Benefits";
