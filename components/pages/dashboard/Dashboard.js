@@ -110,16 +110,17 @@ export default function Dashboard({profile, team}) {
         }
         // console.log(e.target)
     }
-
-    let dataItem = {
-        Data: {ID: 18220092, teamName: 'SWIC', teamCode: 16520491},
-        Members: [
-            {id:1, name: 'Thariq Zhafran Satyagraha', isTeamLeader: true, isVerified: true},
-            {id:2, name: 'Haris Soetnoyo', isTeamLeader: false, isVerified: true},
-            {id:3, name: 'Ertantina Lopez', isTeamLeader: false, isVerified: false}
-        ],
-        AdditionalData: true
+    const getTeam = () => {
+        let data = {};
+        team.map((t) => {
+            if(t.id == profile.profiles.teamID){
+                data = t;
+            }
+        })
+        return data;
     }
+
+    const myTeam = getTeam();
 
     return(
         <Flex flexDirection={fd} h={h} w='full'>
@@ -130,7 +131,7 @@ export default function Dashboard({profile, team}) {
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Dashboard</Heading>
                     <Nav onClick={onClickHandler} isOnTeam={isOnTeam} isOnNotif={isOnNotif} isOnSub={isOnSub}/>
                     
-                    {width < 767 ? isOnTeam && <TeamMemberVertical data={dataItem} /> : isOnTeam && <TeamMemberHorizontal data={dataItem} />}                    
+                    {width < 767 ? isOnTeam && <TeamMemberVertical data={myTeam} /> : isOnTeam && <TeamMemberHorizontal data={myTeam} />}                    
                     {isOnTeam && <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>}
                     {isOnNotif && <Notification />}
                     {isOnSub && <Submission isUploaded={false} />}

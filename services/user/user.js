@@ -26,7 +26,7 @@ export default function getUsers() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [user]);
 
   return { user, error, loading };
 }

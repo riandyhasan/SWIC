@@ -111,6 +111,7 @@ export default function Header({ ...props }) {
             </Box>
             );
             }
+            return null;
           })}
           {!profile.data?
           <Link href="/login">

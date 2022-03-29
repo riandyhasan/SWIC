@@ -28,7 +28,7 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 
-export default function SignUp() {
+export default function SignUp({user}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -53,6 +53,18 @@ export default function SignUp() {
     ) {
       errors = "Phone number is not valid";
     }
+    let isUsernameValid = true;
+
+    user.map((u) => {
+      if(u.username == username){
+        isUsernameValid = false;
+      }
+    })
+
+    if(!isUsernameValid){
+      errors = "Username has been used by another user"
+    }
+
     if (
       !email ||
       email == "" ||
