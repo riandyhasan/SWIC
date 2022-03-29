@@ -6,7 +6,7 @@ import getProfile from "../services/profile/profile";
 
 export default function Login() {
   const profile = getProfile();
-  return profile.loading && !profile.data ? (
+  return !profile.loading && !profile.data ? (
     <Layout>
       <Head>
         <title>SWIC | Login</title>
