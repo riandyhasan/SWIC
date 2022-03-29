@@ -37,7 +37,7 @@ export default function DashboardRegister({user, team}) {
         errors = "Email must not same with another member";
     }
 
-    if(leaderEmail == ""|| leaderName == "" || member1Email == ""|| member2Email == ""|| member1Name == ""|| member2Name == ""){
+    if(teamName == "" || leaderEmail == ""|| leaderName == "" || member1Email == ""|| member2Email == ""|| member1Name == ""|| member2Name == ""){
         errors = "Please fill the form"
     }
 
@@ -113,6 +113,7 @@ export default function DashboardRegister({user, team}) {
     try{
     const teamID = generateID();
     await setDoc(doc(db, "team", teamID), {
+        teamName: teamName,
         leaderName: leaderName,
         leaderEmail: leaderEmail,
         member1Name: member1Name,

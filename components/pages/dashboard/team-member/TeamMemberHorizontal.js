@@ -21,16 +21,16 @@ export function TeamMemberHorizontal({data}) {
             <GridItem rowSpan={rs}>
                 <Flex flexDirection='column' h='full' w='full'>
                     <Text fontFamily='Coolvetica'>Data</Text>
-                    <Data id={data.Data.ID} teamName={data.Data.teamName} teamCode={data.Data.teamCode} />
+                    <Data id={data.id} teamName={data.teamName} teamCode="123456" />
                 </Flex>
             </GridItem>
             <GridItem rowSpan={rs} colSpan={cs}>
                 <Flex flexDirection='column' h='full' w='full'>
                     <Text fontFamily='Coolvetica'>Members</Text>
                     <Grid w='full' h='full' templateRows='repeat(3, 1fr)' gap={gap}>
-                        <Member name={data.Members[0].name} isTeamLeader={data.Members[0].isTeamLeader} isVerified={data.Members[0].isVerified} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
-                        <Member name={data.Members[1].name} isTeamLeader={data.Members[1].isTeamLeader} isVerified={data.Members[1].isVerified} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
-                        <Member name={data.Members[2].name} isTeamLeader={data.Members[2].isTeamLeader} isVerified={data.Members[2].isVerified} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.leaderName} isTeamLeader={true} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.member1Name} isTeamLeader={false} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.member2Name} isTeamLeader={false} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
                     </Grid>
                 </Flex>
             </GridItem>
@@ -38,7 +38,7 @@ export function TeamMemberHorizontal({data}) {
                 <Text fontFamily='Coolvetica'>Additional Data</Text>
                 <Box h='full' w='full'>
                     <Box w='full' h={[, , '2.4rem', '2.4rem']}>
-                        <AdditionalData isUploaded={data.AdditionalData}/>
+                        <AdditionalData isUploaded={false}/>
                     </Box>
                 </Box>
             </GridItem>
