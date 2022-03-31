@@ -1,8 +1,16 @@
 import { Box, Flex, Square, Text } from "@chakra-ui/react";
-import { MdCheckCircle, MdFileUpload } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
+import { useRef, useState } from "react";
 
-export default function Submission({isUploaded}) {
-    
+export default function Submission() {
+    const [filePicked, setFilePicked] = useState();
+    const fileRef = useRef();
+    const handleChange = (e) => {
+        setFilePicked(e.target.files);
+        console.log(e.target.files[0].name);
+
+    };
+
     return(
         <Box>
             <Box borderRadius='0.3em' border='2px' borderColor='secondary.gray' px='16px' py='12px'>
@@ -14,16 +22,28 @@ export default function Submission({isUploaded}) {
                     Mauris quis scelerisque erat.
                 </Text>
                 <Flex alignItems='center' mt='10px'>
-                    <Square bg='secondary.blue' borderRadius='0.6em' fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} color='white' px='22px' py='7px'>
-                        {isUploaded ? <Text pl='3px'>Change File</Text> : 
-                        <>
-                            <MdFileUpload color="white"/>
-                            <Text pl='3px'>Upload</Text>
-                        </>}
+                    <Square bg='secondary.blue' borderRadius='0.6em' cursor='pointer' onClick={() => fileRef.current.click()} fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} color='white' px='22px' py='7px'>
+                        {filePicked ? 
+                            <Box pl='3px'>
+                                <input type="file" hidden
+                                ref={fileRef}
+                                accept="application/pdf"
+                                onChange={handleChange}
+                                multiple={false}/>
+                                Change File
+                            </Box> : 
+                            <Box pl='3px'>
+                                <input type="file" hidden
+                                ref={fileRef}
+                                accept="application/pdf"
+                                onChange={handleChange}
+                                multiple={false}/>
+                                Upload File
+                            </Box>}
                     </Square>
-                    {isUploaded && 
+                    {filePicked && 
                         <Box pl='0.5em'>
-                            <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>Submission_SWIC2022.pdf</Text>
+                            <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>{filePicked[0].name}</Text>
                             <Flex>
                                 <svg width="0" height="0">
                                     <linearGradient id="color-gradient" x1="0%" y1="100%" x2="100%" y2="100%">

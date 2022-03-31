@@ -134,7 +134,7 @@ export default function Dashboard({profile, team}) {
                     {width < 767 ? isOnTeam && <TeamMemberVertical data={myTeam} /> : isOnTeam && <TeamMemberHorizontal data={myTeam} />}                    
                     {isOnTeam && <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>}
                     {isOnNotif && <Notification />}
-                    {isOnSub && <Submission isUploaded={false} />}
+                    {isOnSub && <Submission />}
                 </Box>
             </Box>
         </Flex>
