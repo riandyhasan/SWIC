@@ -38,7 +38,7 @@ export function TeamMemberHorizontal({data}) {
                 <Text fontFamily='Coolvetica'>Additional Data</Text>
                 <Box h='full' w='full'>
                     <Box w='full' h={[, , '2.4rem', '2.4rem']}>
-                        <AdditionalData isUploaded={false}/>
+                        <AdditionalData />
                     </Box>
                 </Box>
             </GridItem>

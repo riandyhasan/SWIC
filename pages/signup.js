@@ -14,7 +14,7 @@ export default function SignUp() {
         <title>SWIC | Sign Up</title>
       </Head>
 
-      <SignUpForm user={users} />
+      <SignUpForm user={users.user} />
       </Layout>
   ) : 
   (

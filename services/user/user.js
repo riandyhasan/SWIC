@@ -16,6 +16,9 @@ export default function getUsers() {
           ...doc.data(),
         }))
       );
+      response.docs.map((doc) => {
+        console.log(doc.data());
+      })
       setLoading(false);
       setError(null);
     } catch (e) {
@@ -26,7 +29,7 @@ export default function getUsers() {
 
   useEffect(() => {
     getData();
-  }, [user]);
+  }, []);
 
   return { user, error, loading };
 }

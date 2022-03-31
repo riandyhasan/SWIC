@@ -12,9 +12,11 @@ import {
 import { useState } from "react";
 
 const SmallInput = ({ title, placeHolder, val, changeData }) => {
+  let fs = ['0.9em', '0.9em', '1.2em', '1.2em']
+
   return (
     <GridItem colSpan={1} fontWeight="semibold">
-      <Text fontWeight="medium" fontFamily={"Coolvetica"}>
+      <Text fontWeight="medium" fontFamily={"Coolvetica"} fontSize={fs}>
         {title}
       </Text>
       <Input
@@ -36,10 +38,11 @@ export function ContactForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inquiries, setInquiries] = useState("");
 
-  let py = ["", "", "0.5em", "1.5em"];
+  let py = ["1em", "1em", "0.5em", "1.5em"];
   let gap = [0, 0, 4, 6];
-  let h = ["", "", "70vw", "50vw"];
-  let mt = ["", "", "", ""];
+  let h = ["55em", "60em", "70vw", "50vw"];
+  let tr = [9, 9, 6, 6];
+  let tc = [1, 1, 2, 2];
 
   const onChangeData = (e) => {
     let id = e.target.id;
@@ -91,14 +94,15 @@ export function ContactForm() {
         textAlign="center"
         color="primary.red"
         fontWeight="medium"
+        fontSize={['1.6em', '1.6em', '2.3em', '2.3em']}
         py={py}
       >
         Drop Your Question Here!
       </Heading>
       <Grid
         h="60%"
-        templateRows="repeat(6, 1fr)"
-        templateColumns="repeat(2, 1fr)"
+        templateRows={`repeat(${tr}, 1fr)`}
+        templateColumns={`repeat(${tc}, 1fr)`}
         gap={gap}
         color="primary.blue"
       >
@@ -117,7 +121,7 @@ export function ContactForm() {
           changeData={onChangeData}
         />
 
-        <GridItem colSpan={2} rowSpan={3} fontWeight="semibold">
+        <GridItem colSpan={[1, 1, 2, 2]} rowSpan={3} fontWeight="semibold">
           <Text fontWeight="medium" fontFamily={"Coolvetica"}>
             Inquiries
           </Text>
@@ -144,5 +148,63 @@ export function ContactForm() {
         Submit
       </Square>
     </Box>
+    // <Box w="80%" h={h}>
+    //   <Heading
+    //     textAlign="center"
+    //     color="primary.red"
+    //     fontWeight="medium"
+    //     py={py}
+    //   >
+    //     Drop Your Question Here!
+    //   </Heading>
+    //   <Grid
+    //     h="60%"
+    //     templateRows="repeat(6, 1fr)"
+    //     templateColumns="repeat(2, 1fr)"
+    //     gap={gap}
+    //     color="primary.blue"
+    //   >
+    //     <SmallInput title="Name" val={name} changeData={onChangeData} />
+    //     <SmallInput
+    //       title="Institution"
+    //       val={institution}
+    //       changeData={onChangeData}
+    //     />
+    //     <SmallInput title="City" val={city} changeData={onChangeData} />
+    //     <SmallInput title="Country" val={country} changeData={onChangeData} />
+    //     <SmallInput title="Email" val={email} changeData={onChangeData} />
+    //     <SmallInput
+    //       title="Phone Number"
+    //       val={phoneNumber}
+    //       changeData={onChangeData}
+    //     />
+
+    //     <GridItem colSpan={2} rowSpan={3} fontWeight="semibold">
+    //       <Text fontWeight="medium" fontFamily={"Coolvetica"}>
+    //         Inquiries
+    //       </Text>
+    //       <Textarea
+    //         id="Inquiries"
+    //         val={inquiries}
+    //         placeholder="Lorem Ipsum"
+    //         h="full"
+    //         onChange={onChangeData}
+    //       />
+    //     </GridItem>
+    //   </Grid>
+    //   <Square
+    //     fontSize="0.9em"
+    //     cursor="pointer"
+    //     mt={["3em", "3em", "3em", "3em"]}
+    //     borderRadius="1.4em"
+    //     py="0.6em"
+    //     bg="primary.blue"
+    //     color="white"
+    //     w={["10em", "12em"]}
+    //     onClick={handleSubmit}
+    //   >
+    //     Submit
+    //   </Square>
+    // </Box>
   );
 }
