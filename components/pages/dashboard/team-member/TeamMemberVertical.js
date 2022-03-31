@@ -20,7 +20,7 @@ export function TeamMemberVertical({data}) {
             </Box>
             <Box>
                 <Text fontFamily='Coolvetica'>Additional Data</Text>
-                <AdditionalData isUploaded={false}/>
+                <AdditionalData />
             </Box>
         </Box>
     )
