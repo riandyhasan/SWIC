@@ -28,7 +28,7 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 
-export default function SignUp() {
+export default function SignUp({user}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -53,6 +53,18 @@ export default function SignUp() {
     ) {
       errors = "Phone number is not valid";
     }
+    let isUsernameValid = true;
+
+    user.map((u) => {
+      if(u.username == username){
+        isUsernameValid = false;
+      }
+    })
+
+    if(!isUsernameValid){
+      errors = "Username has been used by another user"
+    }
+
     if (
       !email ||
       email == "" ||
@@ -101,7 +113,7 @@ export default function SignUp() {
           email: user.email,
           phone: phone,
           institution: institution,
-          "major/faculty": majorfaculty,
+          majorfaculty: majorfaculty,
           teamID: "",
         });
         toast({
@@ -151,7 +163,7 @@ export default function SignUp() {
               duration: 2000,
               isClosable: true,
             });
-            router.push("/");
+            router.push("/profile/edit");
           } else {
             toast({
               title: "Error!",
@@ -188,7 +200,7 @@ export default function SignUp() {
   };
 
   return (
-    <Flex w="100%" minH="100vh">
+    <Flex w="100%" minH="100vh" flexDir={{base:"column", md:"row"}}>
       <Flex
         display={{ base: "none", md: "flex" }}
         alignItems="flex-start"
@@ -241,6 +253,24 @@ export default function SignUp() {
               erat volutpat.
             </Text>
           </Box>
+        </Box>
+      </Flex>
+      <Flex
+        display={{ base: "flex", md: "none" }}
+        alignItems="center"
+        justifyContent="flex-end"
+        bgImage="url('/assets/images/background/login-mobile.png')"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize="cover"
+        w="100%"
+        h="25vh"
+        pl="2.5rem"
+        pr={{base:"1rem", sm:"2.5rem", md:"0rem"}}
+      >
+        <Box color="white">
+          <Heading fontWeight={400} fontSize="1.1em">Welcome to</Heading>
+          <Heading fontWeight={400}>Smarter World Innovation Challenge (SWIC) 2022</Heading>
         </Box>
       </Flex>
       <Flex

@@ -8,7 +8,7 @@ export default function ContactUs() {
   return (
     <Layout>
       <Head>
-        <title>SWIC</title>
+        <title>SWIC | Contact Us</title>
       </Head>
       <Box
         w="100%"

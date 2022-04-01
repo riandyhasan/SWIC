@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Layout from "../components/navigation/Layout";
 import Jumbotron from "../components/pages/home/Jumbotron";
 import Benefits from "../components/pages/home/Benefits";
@@ -13,7 +13,8 @@ export default function Home() {
       </Head>
       <Box
         w="100%"
-        bgImg="url('/assets/images/background/home.png')"
+        bg="linear-gradient(238.15deg, #EB222A 10.14%, #1C1D60 57.05%)"
+        // bgImg="url('/assets/images/background/home.png')"
         bgRepeat="no-repeat"
         bgSize="cover"
       >
