@@ -13,7 +13,7 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import { db } from "../../../utils/firebase";
-import { getAuth, updatePassword, reauthenticateWithCredential } from "firebase/auth";
+import { getAuth, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 import { useRouter } from "next/router";
 import { AiOutlineArrowLeft, AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
@@ -56,7 +56,8 @@ export default function ChangePassword() {
   }else{
     const auth = getAuth();
     const user = auth.currentUser;
-    reauthenticateWithCredential(user, oldPassword).then(() => {
+    const credential = EmailAuthProvider.credential(user.email, oldPassword);
+    reauthenticateWithCredential(user, credential).then(() => {
       
       const auth = getAuth();
       const user = auth.currentUser;
