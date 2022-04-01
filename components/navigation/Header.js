@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Box, Text, Heading, Flex, Stack } from "@chakra-ui/react";
+import { Box, Text, Heading, Flex, Stack, Link } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import getProfile from "../../services/profile/profile"
@@ -88,7 +88,7 @@ export default function Header({ ...props }) {
             if (link.mode === 0 || (profile.data && link.mode === 1)){
             return(
             <Box key={link.name + "-nav"}>
-              <Link href={link.path} key={link.name + "-nav"}>
+              <Link href={link.path} key={link.name + "-nav"} style={{textDecoration:"none"}}>
                 <Heading
                   fontSize="0.85em"
                   fontWeight={500}
@@ -114,7 +114,7 @@ export default function Header({ ...props }) {
             return null;
           })}
           {!profile.data?
-          <Link href="/login">
+          <Link href="/login" style={{textDecoration:"none"}}>
             <Box
               bg={
                 router.pathname == "/login" || router.pathname == "/signup"
@@ -134,7 +134,7 @@ export default function Header({ ...props }) {
           </Link>
 
             :
-          <Link href="/profile">
+          <Link href="/profile" style={{textDecoration:"none"}}>
             <Box
             bg={
               router.pathname.includes("/profile")
