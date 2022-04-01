@@ -13,7 +13,8 @@ export default function Home() {
       </Head>
       <Box
         w="100%"
-        bgImg="url('/assets/images/background/home.png')"
+        bg="linear-gradient(238.15deg, #EB222A 10.14%, #1C1D60 57.05%)"
+        // bgImg="url('/assets/images/background/home.png')"
         bgRepeat="no-repeat"
         bgSize="cover"
       >

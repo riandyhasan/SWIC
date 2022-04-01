@@ -3,7 +3,7 @@ import AdditionalData from "./AdditionalData";
 import Data from "./Data";
 import Member from "./Member";
 
-export function TeamMemberHorizontal({data}) {
+export function TeamMemberHorizontal({data, profile}) {
     let h = ['', '', '15em', '15em'];
     let tr = [, , 6, 6];
     let tc = [, , 1, 1];
@@ -28,9 +28,9 @@ export function TeamMemberHorizontal({data}) {
                 <Flex flexDirection='column' h='full' w='full'>
                     <Text fontFamily='Coolvetica'>Members</Text>
                     <Grid w='full' h='full' templateRows='repeat(3, 1fr)' gap={gap}>
-                        <Member name={data.leaderName} isTeamLeader={true} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
-                        <Member name={data.member1Name} isTeamLeader={false} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
-                        <Member name={data.member2Name} isTeamLeader={false} isVerified={true} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.membersName[0]} isTeamLeader={true} isVerified={data.membersValidation[0]} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.membersName[1]} isTeamLeader={false} isVerified={data.membersValidation[1]} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
+                        <Member name={data.membersName[2]} isTeamLeader={false} isVerified={data.membersValidation[2]} height='full' fsName='0.9em' fsTeamLeader='0.6em' />                        
                     </Grid>
                 </Flex>
             </GridItem>
@@ -38,7 +38,7 @@ export function TeamMemberHorizontal({data}) {
                 <Text fontFamily='Coolvetica'>Additional Data</Text>
                 <Box h='full' w='full'>
                     <Box w='full' h={[, , '2.4rem', '2.4rem']}>
-                        <AdditionalData />
+                        <AdditionalData team={data} profile={profile} />
                     </Box>
                 </Box>
             </GridItem>

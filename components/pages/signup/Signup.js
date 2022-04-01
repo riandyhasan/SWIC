@@ -163,7 +163,7 @@ export default function SignUp({user}) {
               duration: 2000,
               isClosable: true,
             });
-            router.push("/");
+            router.push("/profile/edit");
           } else {
             toast({
               title: "Error!",
