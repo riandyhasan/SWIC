@@ -19,6 +19,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { v4 as uuid } from 'uuid';
 
+
 export default function DashboardRegister({user, team}) {
   const [teamName, setTeamName] = useState("");
   const [leaderName, setLeaderName] = useState("");
@@ -82,9 +83,20 @@ export default function DashboardRegister({user, team}) {
 
   async function updateUserTeam(teamID, user){
     try{
+        let role = "";
+        if(user.email == leaderEmail){
+          role = "leader";
+      }
+      if(user.email == member1Email){
+          role = "member1";
+      }
+      if(user.email == member2Email){
+          role = "member2";
+      }
         const docRef = doc(db, `user`, user.id);
         await updateDoc(docRef, {
-            teamID: teamID
+            teamID: teamID,
+            teamRole : role
           });
     }catch(e){
         var msg = e.message;
@@ -114,13 +126,11 @@ export default function DashboardRegister({user, team}) {
     const teamID = generateID();
     await setDoc(doc(db, "team", teamID), {
         teamName: teamName,
-        leaderName: leaderName,
-        leaderEmail: leaderEmail,
-        member1Name: member1Name,
-        member1Email: member1Email,
-        member2Name: member2Name,
-        member2Email: member2Email,
-        isSubmit: 0,
+        membersName: [leaderName, member1Name, member2Name],
+        membersEmail: [leaderEmail, member1Email, member2Email],
+        membersValidation: [0,0,0],
+        membersData: ["", "", ""],
+        isSubmit: false,
         submission: "",
     });
     user.map((u) =>{
@@ -135,7 +145,7 @@ export default function DashboardRegister({user, team}) {
         duration: 2000,
         isClosable: true,
       });
-    window.location.reload();
+      setTimeout(() => {  window.location.reload(); }, 1500);
     }catch(e){
     var msg = e.message;
     const error = msg.replace("Firebase:", "");

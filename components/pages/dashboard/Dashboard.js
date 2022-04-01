@@ -131,10 +131,9 @@ export default function Dashboard({profile, team}) {
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Dashboard</Heading>
                     <Nav onClick={onClickHandler} isOnTeam={isOnTeam} isOnNotif={isOnNotif} isOnSub={isOnSub}/>
                     
-                    {width < 767 ? isOnTeam && <TeamMemberVertical data={myTeam} /> : isOnTeam && <TeamMemberHorizontal data={myTeam} />}                    
-                    {isOnTeam && <Square bg='primary.blue' borderRadius='2rem' w='6em' color='white' py='1em' px='6em' fontSize='0.5em' mt='2em'>Save</Square>}
+                    {width < 767 ? isOnTeam && <TeamMemberVertical data={myTeam} profile={profile} /> : isOnTeam && <TeamMemberHorizontal data={myTeam} profile={profile}/>}                    
                     {isOnNotif && <Notification />}
-                    {isOnSub && <Submission />}
+                    {isOnSub && <Submission team={myTeam} />}
                 </Box>
             </Box>
         </Flex>

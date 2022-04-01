@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react"
-import { MdCancel, MdCheckCircle } from "react-icons/md";
+import { MdCancel, MdCheckCircle, MdDoNotDisturbOn } from "react-icons/md";
 
 export default function Member({name, isTeamLeader, isVerified, height, mb, fsName, fsTeamLeader}) {
     return(
@@ -8,11 +8,18 @@ export default function Member({name, isTeamLeader, isVerified, height, mb, fsNa
                 <Text fontSize={fsName}>{name}</Text>
                 {isTeamLeader ? <Text fontSize={fsTeamLeader}>Team Leader</Text> : <></>}
             </Flex>
-            {isVerified ? 
+            {isVerified == 1 || isVerified == 2 ? 
+            isVerified == 2 ?
             <Flex alignItems='center'>
                 <MdCheckCircle />
                 <Text fontSize='0.6em' pl='0.3em'>Verified</Text>
-            </Flex>:
+            </Flex>
+            :
+            <Flex alignItems='center'>
+            <MdDoNotDisturbOn color="#FFD600" />
+            <Text fontSize='0.6em' pl='0.3em'>Pending</Text>
+        </Flex>   
+        :
             <Flex alignItems='center'>
                 <MdCancel color="red" />
                 <Text fontSize='0.6em' pl='0.3em' color='red'>Not Verified</Text>
