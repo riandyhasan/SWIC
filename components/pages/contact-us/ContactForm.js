@@ -40,7 +40,7 @@ export function ContactForm() {
 
   let py = ["1em", "1em", "0.5em", "1.5em"];
   let gap = [0, 0, 4, 6];
-  let h = ["55em", "60em", "70vw", "50vw"];
+  let h = ["55em", "60em", "37em", "40em"];
   let tr = [9, 9, 6, 6];
   let tc = [1, 1, 2, 2];
 
