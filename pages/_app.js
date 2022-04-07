@@ -11,9 +11,11 @@ const theme = extendTheme({
     primary: {
       blue: "#1C1D60",
       red: "#EB222A",
+      purple: "#FABA8A"
     },
     secondary: {
       blue: "#3A45B1",
+      red: "#CB0E05",
       yellow: "#FFD600",
       gray: "#D8D7D7",
     },
