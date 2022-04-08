@@ -17,10 +17,11 @@ export default function Home() {
         // bgImg="url('/assets/images/background/home.png')"
         bgRepeat="no-repeat"
         bgSize="cover"
+        pb="5rem"
       >
         <Jumbotron />
         <Benefits />
-        <Sponsor />
+        {/* <Sponsor /> */}
       </Box>
     </Layout>
   );

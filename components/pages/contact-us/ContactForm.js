@@ -23,7 +23,7 @@ const SmallInput = ({ title, placeHolder, val, changeData }) => {
         id={title}
         value={val}
         onChange={changeData}
-        placeholder="Lorem Ipsum"
+        placeholder={placeHolder}
       />
     </GridItem>
   );
@@ -106,19 +106,21 @@ export function ContactForm() {
         gap={gap}
         color="primary.blue"
       >
-        <SmallInput title="Name" val={name} changeData={onChangeData} />
+        <SmallInput title="Name" val={name} changeData={onChangeData} placeHolder="Name" />
         <SmallInput
           title="Institution"
           val={institution}
           changeData={onChangeData}
+          placeHolder="Institution"
         />
-        <SmallInput title="City" val={city} changeData={onChangeData} />
-        <SmallInput title="Country" val={country} changeData={onChangeData} />
-        <SmallInput title="Email" val={email} changeData={onChangeData} />
+        <SmallInput title="City" val={city} changeData={onChangeData} placeHolder="City" />
+        <SmallInput title="Country" val={country} changeData={onChangeData} placeHolder="Country" />
+        <SmallInput title="Email" val={email} changeData={onChangeData} placeHolder="Email" />
         <SmallInput
           title="Phone Number"
           val={phoneNumber}
           changeData={onChangeData}
+          placeHolder="Phone Number"
         />
 
         <GridItem colSpan={[1, 1, 2, 2]} rowSpan={3} fontWeight="semibold">
@@ -128,7 +130,7 @@ export function ContactForm() {
           <Textarea
             id="Inquiries"
             val={inquiries}
-            placeholder="Lorem Ipsum"
+            placeholder="Inquiries"
             h="full"
             onChange={onChangeData}
           />
