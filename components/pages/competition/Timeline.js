@@ -34,8 +34,6 @@ export default function Timeline() {
                     <SmallBox isFirst={true}></SmallBox>
                     <SmallBox></SmallBox>
                     <SmallBox></SmallBox>
-                    <SmallBox></SmallBox>
-                    <SmallBox></SmallBox>
                     <SmallBox isLast={true}></SmallBox>
                 </Box>
             </Flex>

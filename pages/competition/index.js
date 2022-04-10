@@ -5,6 +5,7 @@ import Countdown from "../../components/pages/home/Countdown";
 import Jumbotron from "../../components/pages/competition/Jumbotron";
 import WhatCanYouGet from "../../components/pages/competition/WhatCanYouGet";
 import Timeline from "../../components/pages/competition/Timeline";
+import Prize from "../../components/pages/competition/Prize";
 
 export default function ContactUs() {
   return (
@@ -19,10 +20,11 @@ export default function ContactUs() {
         bgSize="cover"
       >
 
-          <Jumbotron />
-      </Box>
-          <WhatCanYouGet />
-          <Timeline />
+        <Jumbotron />
+        </Box>
+        <WhatCanYouGet />
+        <Timeline />
+        <Prize />
     </Layout>
   );
 }
