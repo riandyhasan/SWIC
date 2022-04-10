@@ -11,7 +11,8 @@ export default function Submission({team}) {
     const toast = useToast();
     const fileRef = useRef();
     const handleChange = (e) => {
-        setFilePicked(e.target.files);
+        setFilePicked(e.target.files[0]);
+        console.log(e.target.files[0].name);
     };
 
     async function handleSubmit(){
@@ -73,29 +74,19 @@ export default function Submission({team}) {
                 </Text>
                 <Flex alignItems='center' mt='10px'>
                     <Square bg='secondary.blue' borderRadius='0.6em' cursor='pointer' onClick={() => fileRef.current.click()} fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} color='white' px='22px' py='7px'>
-                        {filePicked ? 
-                            <Box pl='3px'>
-                                <input type="file" hidden
-                                ref={fileRef}
-                                accept="application/pdf"
-                                onChange={handleChange}
-                                multiple={false}/>
-                                Change File
-                            </Box> : 
-                            <Box pl='3px'>
-                                <input type="file" hidden
-                                ref={fileRef}
-                                accept="application/pdf"
-                                onChange={handleChange}
-                                multiple={false}/>
-                                {filePicked || team.submissionName ? "Change File" : "Upload File"} 
-                            </Box>}
+                        <Box pl='3px'>
+                            <input type="file" hidden
+                            ref={fileRef}
+                            accept="application/pdf"
+                            onChange={handleChange}
+                            multiple={false}/>
+                            {filePicked || team.submissionName ? "Change File" : "Upload File"} 
+                        </Box>
                     </Square>
                     {filePicked || team.submissionName && 
                         <Box pl='0.5em'>
                         {filePicked ?
-                            <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>{filePicked[0].name}</Text>
-
+                            <Text fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} fontWeight='bold'>{filePicked.name}</Text>
                             :
                             <a             
                             href={team.submission}
