@@ -66,7 +66,7 @@ export default function Countdown() {
     let second = Math.floor(ctime - day * 86400 - hour * 3600 - minute * 60);
 
     setTime({ day: day, hour: hour, minute: minute, second: second });
-    // setIsLoading(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
