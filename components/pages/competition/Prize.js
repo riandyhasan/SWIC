@@ -2,8 +2,8 @@ import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 
 const Place = () => {
     return(
-        <Flex justifyContent={"end"} alignItems={"center"} h="33%" pr="3em">
-            <Flex h="64%" w="5.7em">
+        <Flex justifyContent={"center"} alignItems={"center"} h="33%" >
+            <Flex h="60px" w="5.7em">
                 <img src="/assets/images/pattern/prize.png" alt="img" />
             </Flex>
             <Box>

@@ -6,6 +6,8 @@ import Jumbotron from "../../components/pages/competition/Jumbotron";
 import WhatCanYouGet from "../../components/pages/competition/WhatCanYouGet";
 import Timeline from "../../components/pages/competition/Timeline";
 import Prize from "../../components/pages/competition/Prize";
+import Judges from "../../components/pages/competition/Judges";
+import FAQ from "../../components/pages/competition/FAQ";
 
 export default function ContactUs() {
   return (
@@ -25,6 +27,8 @@ export default function ContactUs() {
         <WhatCanYouGet />
         <Timeline />
         <Prize />
+        <Judges />
+        <FAQ />
     </Layout>
   );
 }
