@@ -7,7 +7,7 @@ const TextCountdown = ({ p, tens, ones, isLoading }) => {
     <Box h="100%">
       <Flex>
         {isLoading ?
-        <Skeleton h="2.85em" w="2.85em" marginRight="0.3em" borderRadius="0.4em" startColor="primary.purple" endColor="secondary.red" />:
+        <Skeleton h="2.85em" w="2.85em" marginRight="0.3em" borderRadius="0.4em" startColor="gray.400" endColor="white" />:
         <Square
           bg="white"
           size="1.9em"
@@ -21,7 +21,7 @@ const TextCountdown = ({ p, tens, ones, isLoading }) => {
         </Square>
         }
         {isLoading ?
-        <Skeleton h="2.85em" w="2.85em" marginRight="0.3em" borderRadius="0.4em" startColor="primary.purple" endColor="secondary.red" />:
+        <Skeleton h="2.85em" w="2.85em" marginRight="0.3em" borderRadius="0.4em" startColor="gray.400" endColor="white" />:
         <Square
           bg="white"
           size="1.9em"
