@@ -16,6 +16,9 @@ const Place = () => {
 }
 
 export default function Prize() {
+    let h = ["50vw", "40vw", "30vw", "26vw"]
+    let w = ["0","0","0","50%"]
+    let w2 = ["100%","100%","100%","50%"]
     return(
         <Flex w="full" flexDirection={"column"} justifyContent={"center"} alignItems="center">
             <Text
@@ -26,13 +29,13 @@ export default function Prize() {
                 Prize
             </Text>
             <Flex w="full">
-                <Flex flexDirection={"column"} h="26vw" w="50%">
+                <Flex flexDirection={"column"} h={h} w={w2}>
                     <Place />
                     <Place />
                     <Place />
 
                 </Flex>
-                <Box h="26vw" w="50%">
+                <Box h={h} w={w}>
                     <img src="/assets/images/background/prize.png" alt="img" />
                 </Box>
             </Flex>
