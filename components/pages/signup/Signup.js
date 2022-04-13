@@ -153,7 +153,7 @@ export default function SignUp({user}) {
               email: user.email,
               phone: user.phoneNumber ? user.phoneNumber : "",
               institution: "",
-              "major/faculty": "",
+              majorfaculty: "",
               teamID: "",
             });
             toast({

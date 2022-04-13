@@ -38,7 +38,7 @@ export default function DashboardRegister({user, team}) {
         errors = "Email must not same with another member";
     }
 
-    if(teamName == "" || leaderEmail == ""|| leaderName == "" || member1Email == ""|| member2Email == ""|| member1Name == ""|| member2Name == ""){
+    if(teamName == "" || leaderEmail == ""|| leaderName == "" || member1Email == "" || member1Name == ""){
         errors = "Please fill the form"
     }
 
@@ -63,9 +63,22 @@ export default function DashboardRegister({user, team}) {
     if(!isMember1){
         errors = "Cannot find member 1 email, please register first."
     }
-    if(!isMember2){
+    if(member2Email != "" && member2Name != "" && !isMember2){
         errors = "Cannot find member 2 email, please register first."
     }
+
+    let isRegistered = false;
+    user.map((u) => {
+      if(u.email == leaderEmail || u.email == member1Email || u.email == member2Email){
+          if(u.teamCode && u.teamCode != ""){
+            isRegistered = true;
+          }
+      }
+  })
+
+  if(isRegistered){
+    errors = "Cannot register team member that already registered."
+  }
     return errors;
   }
 
@@ -126,8 +139,8 @@ export default function DashboardRegister({user, team}) {
     const teamID = generateID();
     await setDoc(doc(db, "team", teamID), {
         teamName: teamName,
-        membersName: [leaderName, member1Name, member2Name],
-        membersEmail: [leaderEmail, member1Email, member2Email],
+        membersName: [leaderName, member1Name, member2Name == "" ? "-" : member2Name],
+        membersEmail: [leaderEmail, member1Email, member2Email == "" ? "-" : member2Email],
         membersValidation: [0,0,0],
         membersData: ["", "", ""],
         isSubmit: false,

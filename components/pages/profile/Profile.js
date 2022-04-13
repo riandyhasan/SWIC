@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import {
   Flex,
   Box,
@@ -100,7 +100,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.username ? profile.profiles.username : "-"}
+                { profile ? profile.profiles.username ? profile.profiles.username : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
@@ -118,7 +118,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.email ? profile.profiles.email : "-"}
+                {profile ? profile.profiles.email ? profile.profiles.email : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
@@ -136,7 +136,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.name ? profile.profiles.name : "-"}
+                {profile ? profile.profiles.name ? profile.profiles.name : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
@@ -154,7 +154,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.phone ? profile.profiles.phone : "-"}
+                {profile ? profile.profiles.phone ? profile.profiles.phone : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
@@ -172,7 +172,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.institution ? profile.profiles.institution : "-"}
+                {profile ? profile.profiles.institution ? profile.profiles.institution : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
@@ -190,7 +190,7 @@ export default function Profile({profile}) {
                 fontSize="1em"
                 color="#5B5F5F"
             >
-                {profile.profiles.majorfaculty ? profile.profiles.majorfaculty : "-"}
+                {profile ? profile.profiles.majorfaculty ? profile.profiles.majorfaculty : "-" : ""}
             </Text>
             </Flex>
           </GridItem>
