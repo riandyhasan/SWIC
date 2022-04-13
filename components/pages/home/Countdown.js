@@ -50,7 +50,7 @@ const TextCountdown = ({ p, tens, ones, isLoading }) => {
 export default function Countdown() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const finishTime = new Date("2022-04-13");
+  const finishTime = new Date("2022-04-14");
   const currtime = new Date();
   const totalDays = Math.floor(
     (finishTime.getTime() - currtime.getTime()) / 86400000
