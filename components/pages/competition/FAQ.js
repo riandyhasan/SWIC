@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Flex, Text } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Flex, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { useState } from "react";
 
@@ -38,6 +38,32 @@ const AccordionComp = ({caption, description}) => {
 }
 
 export default function FAQ() {
+    let faq = [{
+        caption: "What is SWIC 2022?",
+        description: "SMARTER WORLD Innovation Challenge (SWIC) is an official T20 social impact business and engineering innovation marketplace, aiming to unlock global digital potential to fulfill meaningful digital connectivity, cybersecurity, and empowerment."
+    }, {
+        caption: "What is the theme of SWIC 2022?",
+        description: "The main theme of this year's SWIC 2022 is “Obliterate the digital status quo through technological advancement”."
+    }, {
+        caption: "Who is eligible to participate in SWIC 2022?",
+        description: "Anyone aged 18 to 30 is eligible to register for SWIC 2022."
+    }, {
+        caption: "What are the benefits of joining SWIC 2022?",
+        description: "Win a chance to get a total of 6000 USD, demo day experience, scale product at SCCIC Living lab and many more!"
+    }, {
+        caption: "What are the phases of the challenge?",
+        description: 
+        <UnorderedList>
+            <ListItem>1st round submission (10 April 2022 - 10 May 2022)</ListItem>
+            <ListItem>Incubation (1 June 2022 - 21 June 2022)</ListItem>
+            <ListItem>Demo Day & Scale-up (25 June 2022)</ListItem>
+        </UnorderedList>
+        // description: `\u2022 1st round submission (10 April 2022 - 10 May 2022)\n\u2022 Incubation (1 June 2022 - 21 June 2022)\u2022 Demo Day & Scale-up (25 June 2022)`
+    }, {   
+        caption: "What makes SWICC 2022 Different from other competitions/challenges?",
+        description: "SWIC 2022 will be joined by globally recognized think tanks, institutions, and corporations to provide a compelling experience for the participants."
+    }]
+
     return(
         <Flex
         flexDirection={"column"}
@@ -53,12 +79,15 @@ export default function FAQ() {
                 FAQ
             </Text>
             <Accordion w="80%" allowMultiple allowToggle>
-                <AccordionComp 
-                caption={"What is SWIC 2022?"} 
-                description="SMARTER WORLD Innovation Challenge (SWIC) is an official T20 social impact business and engineering innovation marketplace, aiming to unlock global digital potential to fulfill meaningful digital connectivity, cybersecurity, and empowerment."
-                />
-                <AccordionComp />
-                <AccordionComp />
+                {faq.map((data, id) => {
+                    return(
+                        <AccordionComp 
+                        key={id}
+                        caption={data.caption}
+                        description={data.description}
+                        />
+                    )
+                })}
             </Accordion>
         </Flex>
     )
