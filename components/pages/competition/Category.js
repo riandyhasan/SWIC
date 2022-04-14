@@ -3,17 +3,20 @@ import { Flex, Text } from "@chakra-ui/react";
 const SquareTemp = ({title, desc}) => {
     return(
         <Flex 
+        cursor="pointer"
         flexDirection={"column"}
         justifyContent="center"
         alignItems="center"
         bg="gray.100"
-        borderRadius={"1em"}
-        border="2px"
+        border="2px solid #1C1D60"
+        borderRadius="1em"
         w="17em"
-        sx={{
-            borderColor: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
-        }}
-        borderColor={"red"}
+        // sx={{
+        //     borderImage: "linear-gradient(to right, #EB222A , #1C1D60)",
+        //     borderImageSlice: 1,
+        //     borderRadius: "inherit"
+
+        // }}
         h="11em"
         p={"1em"}
         m="1.6em"
@@ -32,7 +35,8 @@ const SquareTemp = ({title, desc}) => {
 export default function Category() {
     let content = [{
         title: "Accessible Healthcare",
-        desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?"
+        desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?",
+        href:""
     }, {
         title: "Inclusive Literacy",
         desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?"
