@@ -9,9 +9,12 @@ import Prize from "../../components/pages/competition/Prize";
 import Judges from "../../components/pages/competition/Judges";
 import FAQ from "../../components/pages/competition/FAQ";
 import Category from "../../components/pages/competition/Category";
+import getProfile from "../../services/profile/profile";
+import Loading from "../../components/loading/Loading";
 
-export default function ContactUs() {
-  return (
+export default function Competition() {
+  const profile = getProfile();
+  return !profile.loading ? (
     <Layout>
       <Head>
         <title>SWIC | Competition</title>
@@ -23,7 +26,7 @@ export default function ContactUs() {
         bgSize="cover"
       >
 
-        <Jumbotron />
+        <Jumbotron profile={profile} />
         </Box>
         <WhatCanYouGet />
         <Category />
@@ -32,5 +35,7 @@ export default function ContactUs() {
         {/* <Judges /> */}
         <FAQ />
     </Layout>
-  );
+  ) : (
+    <Loading/>
+  )
 }
