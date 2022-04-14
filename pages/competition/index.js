@@ -8,6 +8,7 @@ import Timeline from "../../components/pages/competition/Timeline";
 import Prize from "../../components/pages/competition/Prize";
 import Judges from "../../components/pages/competition/Judges";
 import FAQ from "../../components/pages/competition/FAQ";
+import Category from "../../components/pages/competition/Category";
 
 export default function ContactUs() {
   return (
@@ -25,9 +26,10 @@ export default function ContactUs() {
         <Jumbotron />
         </Box>
         <WhatCanYouGet />
+        <Category />
         <Timeline />
         <Prize />
-        <Judges />
+        {/* <Judges /> */}
         <FAQ />
     </Layout>
   );

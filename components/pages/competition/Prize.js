@@ -1,15 +1,14 @@
-import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 
-const Place = () => {
+const Place = ({caption, description}) => {
     return(
         <Flex justifyContent={"center"} alignItems={"center"} h="33%" >
             <Flex h="60px" w="5.7em">
                 <img src="/assets/images/pattern/prize.png" alt="img" />
             </Flex>
             <Box>
-                <Text fontSize={"1.2em"} fontWeight="bold">1st Place</Text>
-                <Text>- USD 3000 + Living Lab R&D</Text>
-                <Text>- Full acomodation during incubation and demo day</Text>
+                <Text fontSize={"1.2em"} fontWeight="bold">{caption}</Text>
+                {description}
             </Box>
         </Flex>
     )
@@ -19,6 +18,30 @@ export default function Prize() {
     let h = ["50vw", "40vw", "30vw", "26vw"]
     let w = ["0","0","0","50%"]
     let w2 = ["100%","100%","100%","50%"]
+
+    let prizes = [{
+        caption: "1st Place",
+        description: 
+        <UnorderedList>
+            <ListItem>USD 3000 + Living Lab R&D</ListItem>
+            <ListItem>Full acomodation during incubation and demo day</ListItem>
+        </UnorderedList>
+    }, {
+        caption: "2nd Place",
+        description:
+        <UnorderedList>
+            <ListItem>USD 2000 + Living Lab R&D</ListItem>
+            <ListItem>Full acomodation during incubation and demo day</ListItem>
+        </UnorderedList>
+    }, {
+        caption: "3rd Place",
+        description: 
+        <UnorderedList>
+            <ListItem>USD 1000 + Living Lab R&D</ListItem>
+            <ListItem>Full acomodation during incubation and demo day</ListItem>
+        </UnorderedList>
+    }]
+
     return(
         <Flex w="full" flexDirection={"column"} justifyContent={"center"} alignItems="center">
             <Text
@@ -30,10 +53,11 @@ export default function Prize() {
             </Text>
             <Flex w="full">
                 <Flex flexDirection={"column"} h={h} w={w2}>
-                    <Place />
-                    <Place />
-                    <Place />
-
+                    {prizes.map((data, id) => {
+                        return(
+                            <Place key={id} caption={data.caption} description={data.description} />
+                        )
+                    })}
                 </Flex>
                 <Box h={h} w={w}>
                     <img src="/assets/images/background/prize.png" alt="img" />
