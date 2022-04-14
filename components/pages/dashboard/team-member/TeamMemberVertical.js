@@ -9,7 +9,7 @@ export function TeamMemberVertical({data, profile}) {
             <Flex flexDirection='column' alignItems='center' mb='0.5em'>
                 <Flex flexDirection='column' h='full' w='full'>
                     <Text fontFamily='Coolvetica'>Data</Text>
-                    <Data id={data.id} teamName={data.teamName} teamCode="123456" pb='4px'/>
+                    <Data id={data.id} teamName={data.teamName} teamCategory={data.teamCategory} pb='4px'/>
                 </Flex>
             </Flex>
             <Box>

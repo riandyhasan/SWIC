@@ -12,6 +12,7 @@ import {
   AlertIcon,
   AlertDescription,
   useToast,
+  Select
 } from "@chakra-ui/react";
 import { db } from "../../../../utils/firebase";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
@@ -28,6 +29,7 @@ export default function DashboardRegister({user, team}) {
   const [member1Email, setMember1Email] = useState("");
   const [member2Name, setMember2Name] = useState("");
   const [member2Email, setMember2Email] = useState("");
+  const [teamCategory, setTeamCategory] = useState({label:"Accessible Healthcare", value:"Accessible Healthcare"});
   const router = useRouter();
   const toast = useToast();
 
@@ -145,6 +147,7 @@ export default function DashboardRegister({user, team}) {
         membersData: ["", "", ""],
         isSubmit: false,
         submission: "",
+        teamCategory: teamCategory
     });
     user.map((u) =>{
         if(leaderEmail == u.email|| member1Email == u.email || member2Email == u.email){
@@ -218,6 +221,34 @@ export default function DashboardRegister({user, team}) {
               />
             </FormControl>
         </Flex>
+
+        <Flex w="100%">
+        <FormControl isRequired>
+              <FormLabel
+                htmlFor="category"
+                fontFamily="Coolvetica"
+                color="primary.blue"
+                fontSize="1.3em"
+              >
+                Category
+              </FormLabel>
+              <Select
+                id="category"
+                borderRadius="10px"
+                border="2px solid #D8D7D7"
+                value={teamCategory}
+                onChange={(e) => setTeamCategory(e.target.value)}
+              >
+                  <option value='Accessible Healthcare'>Accessible Healthcare</option>
+                  <option value='Inclusive Literacy'>Inclusive Literacy</option>
+                  <option value='Meaningful Connectivity'>Meaningful Connectivity</option>
+                  <option value='Solving Resistance for Preventative Medicine'>Solving Resistance for Preventative Medicine</option>
+                  <option value='Decentralized Finance & Exchange'>Decentralized Finance & Exchange</option>
+                  <option value='Low-carbon AI'>Low-carbon AI</option>
+              </Select>
+            </FormControl>
+        </Flex>
+
 
         <Grid
           gridTemplateColumns="repeat(2, 1fr)"

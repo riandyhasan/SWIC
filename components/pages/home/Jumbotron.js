@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Text, Flex, Heading, Square } from "@chakra-ui/react";
+import { Box, Text, Flex, Heading, Square, Link } from "@chakra-ui/react";
 import Countdown from "./Countdown";
 import Image from "next/image";
 
-export default function Jumbotron() {
+export default function Jumbotron({profile}) {
   return (
     <Flex
       flexDirection={["column", "column", "column", "row-reverse"]}
@@ -51,6 +51,7 @@ export default function Jumbotron() {
         </Box>
         <Countdown />
         <Flex justifyContent={["center", "center", "center", "start"]}>
+        <Link href={profile.data ? "/dashboard" : "/login"} style={{textDecoration:"none"}}>
           <Square
             fontSize="0.8em"
             cursor="pointer"
@@ -64,6 +65,7 @@ export default function Jumbotron() {
           >
             Register Now!
           </Square>
+          </Link>
         </Flex>
       </Flex>
     </Flex>
