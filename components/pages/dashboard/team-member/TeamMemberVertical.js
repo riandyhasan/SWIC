@@ -16,7 +16,7 @@ export function TeamMemberVertical({data, profile}) {
                 <Text fontFamily='Coolvetica'>Member</Text>
                 <Member name={data.membersName[0]} isTeamLeader={true} isVerified={data.membersValidation[0]} height='44px' mb='0.2em' fsName='0.8em' fsTeamLeader='0.5em'/>
                 <Member name={data.membersName[1]} isTeamLeader={false} isVerified={data.membersValidation[1]} height='44px' mb='0.2em' fsName='0.8em' fsTeamLeader='0.5em'/>
-                <Member name={data.membersName[2]} isTeamLeader={false} isVerified={data.membersValidation[2]} height='44px' mb='0.2em' fsName='0.8em' fsTeamLeader='0.5em'/>
+                {data.membersName[2] == "-"  ? null :<Member name={data.membersName[2]} isTeamLeader={false} isVerified={data.membersValidation[2]} height='44px' mb='0.2em' fsName='0.8em' fsTeamLeader='0.5em'/> }
             </Box>
             <Box>
                 <Text fontFamily='Coolvetica'>Additional Data</Text>

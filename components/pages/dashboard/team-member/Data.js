@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box, Flex, Text, Select } from "@chakra-ui/react"
 import { db } from "../../../../utils/firebase";
 import { doc, updateDoc } from "firebase/firestore";
@@ -6,7 +7,9 @@ import { MdArrowDropDown } from "react-icons/md";
 
 
 export default function Data({id, teamName, teamCategory, pb}) {
+    const [category, setCategory] = useState(teamCategory);
     async function changeCategory(e){
+        setCategory(e.target.value);
         try{
             const docRef = doc(db, `team`, id);
             await updateDoc(docRef, {
@@ -47,13 +50,13 @@ export default function Data({id, teamName, teamCategory, pb}) {
                 fontSize={fsValue}
                 fontWeight={fw}
                 border="none"
-                value={teamCategory}
+                value={category}
                 textAlign="left"
                 variant="unstyled"
                 icon={<MdArrowDropDown color="#1C1D60"/>}
                 onChange={(e) =>  changeCategory(e)}
               >
-                  <option value='Accessible Healthcare'>Accessible Healthcare</option>
+                  <option value='Accessible Healthcare' >Accessible Healthcare</option>
                   <option value='Inclusive Literacy'>Inclusive Literacy</option>
                   <option value='Meaningful Connectivity'>Meaningful Connectivity</option>
                   <option value='Solving Resistance for Preventative Medicine'>Solving Resistance for Preventative Medicine</option>

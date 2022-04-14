@@ -17,9 +17,9 @@ export default function Submission({team}) {
     async function handleSubmit(){
         try{
             const storage = getStorage();
-            const storageRef = ref(storage, `team-submission/${team.teamCategory}/${team.teamName}/${filePicked.name}.pdf`);
-            uploadBytes(storageRef, filePicked[0]).then((snapshot) => {
-                getDownloadURL(ref(storage, `team-submission/${team.teamCategory}/${team.teamName}/${filePicked.name}.pdf`)).then(async function (url){
+            const storageRef = ref(storage, `team-submission/${team.teamCategory}/${team.teamName}/${filePicked.name}`);
+            uploadBytes(storageRef, filePicked).then((snapshot) => {
+                getDownloadURL(ref(storage, `team-submission/${team.teamCategory}/${team.teamName}/${filePicked.name}`)).then(async function (url){
                     try{
                         const docRef = doc(db, `team`, team.id);
                         await updateDoc(docRef, {
