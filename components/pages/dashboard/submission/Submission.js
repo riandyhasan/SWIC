@@ -12,7 +12,6 @@ export default function Submission({team}) {
     const fileRef = useRef();
     const handleChange = (e) => {
         setFilePicked(e.target.files[0]);
-        console.log(e.target.files[0].name);
     };
 
     async function handleSubmit(){
@@ -26,7 +25,7 @@ export default function Submission({team}) {
                         await updateDoc(docRef, {
                             isSubmit: true,
                             submission: url,
-                            submissionName: filePicked[0].name,
+                            submissionName: filePicked.name,
                           });
                           setSubmitted(true);
                           toast({
