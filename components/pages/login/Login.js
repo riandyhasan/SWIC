@@ -206,9 +206,10 @@ export default function Login({users}) {
               mt="1rem"
               maxW="80%"
             >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat.
+            The Smarter World Innovation Challenge [SWIC] is an official T20
+            impact business and engineering innovation marketplace, aiming to
+            unlock global digital potential to fulfill meaningful digital
+            connectivity, cybersecurity, and empowerment through the three
             </Text>
           </Box>
         </Box>
