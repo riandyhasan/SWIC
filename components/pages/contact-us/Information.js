@@ -34,7 +34,7 @@ export default function Information() {
             <GoMail size="1em" />
           </Circle>
           <Text fontWeight="medium" pl="0.5em" fontSize={fs2}>
-            E-mail : thariqzs@yahoo.com
+            E-mail : ameliaamanda123@gmail.com
           </Text>
         </Flex>
       </Flex>

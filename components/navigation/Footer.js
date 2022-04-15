@@ -128,7 +128,7 @@ export default function Footer() {
       >
         <Flex flexDir={{base:"row", md:"column"}} gridGap="1rem">
           <a
-            href="https://www.instagram.com/itb1920/"
+            href="https://www.instagram.com/swic.t20"
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none" }}
@@ -137,11 +137,11 @@ export default function Footer() {
               <Box bg="white" p="0.2rem" borderRadius="50px">
                 <AiOutlineInstagram size="1.5em" color="#1C1D60" />
               </Box>
-              <Text display={{base:"none", md:"block"}}>@swic</Text>
+              <Text display={{base:"none", md:"block"}}>@swic.t20</Text>
             </Flex>
           </a>
           <a
-            href="https://www.instagram.com/itb1920/"
+            href="https://www.linkedin.com/company/t20solutions/"
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none" }}
@@ -150,7 +150,7 @@ export default function Footer() {
               <Box bg="white" p="0.2rem" borderRadius="50px">
                 <AiFillLinkedin size="1.5em" color="#1C1D60" />
               </Box>
-              <Text display={{base:"none", md:"block"}}>SWICC</Text>
+              <Text display={{base:"none", md:"block"}}>T20 Indonesia</Text>
             </Flex>
           </a>
         </Flex>

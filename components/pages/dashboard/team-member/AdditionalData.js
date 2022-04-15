@@ -13,6 +13,7 @@ export default function AdditionalData({team, profile}) {
     const fileRef = useRef();
     const handleChange = (e) => {
         setFilePicked(e.target.files);
+        console.log(e.target.files)
     };
 
     const getRole = () => {

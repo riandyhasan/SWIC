@@ -14,18 +14,20 @@ import {
   InputRightElement,
   useToast,
 } from "@chakra-ui/react";
-import { app } from "../../../utils/firebase";
+import { db } from "../../../utils/firebase";
 import {
   getAuth,
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  getAdditionalUserInfo,
 } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 
-export default function Login() {
+export default function Login({users}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -87,16 +89,49 @@ export default function Login() {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
     try {
-      signInWithPopup(auth, provider)
-        .then((result) => {
+      signInWithPopup(auth, provider).then(async function (result) {
+        const user = result.user;
+        const additionalUserInfo = getAdditionalUserInfo(result);
+        try {
+          if (additionalUserInfo.isNewUser) {
+            await setDoc(doc(db, "user", user.uid), {
+              username: "",
+              name: user.displayName,
+              email: user.email,
+              phone: user.phoneNumber ? user.phoneNumber : "",
+              institution: "",
+              majorfaculty: "",
+              teamID: "",
+            });
+            toast({
+              title: "Register success",
+              description: "Your account has been registered successfully",
+              status: "success",
+              duration: 2000,
+              isClosable: true,
+            });
+            router.push("/profile/edit");
+          } else {
+            toast({
+              title: "Login success!",
+              description: "You have been logged in successfully.",
+              status: "success",
+              duration: 2000,
+              isClosable: true,
+            });
+            router.push("/profile");
+          }
+        } catch (e) {
+          var msg = e.message;
+          const error = msg.replace("Firebase:", "");
           toast({
-            title: "Login success!",
-            description: "You have been logged in successfully.",
-            status: "success",
+            title: "Error!",
+            description: error,
+            status: "error",
             duration: 2000,
             isClosable: true,
           });
-          router.push("/");
+        }
         })
         .catch((e) => {
           var msg = e.message;
