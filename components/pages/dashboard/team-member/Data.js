@@ -35,11 +35,11 @@ export default function Data({id, teamName, teamCategory, pb}) {
     return(
         <Flex flexDirection='column' justifyContent='space-between' h='full' w='full' border='2px' borderColor='secondary.gray' borderRadius='0.3em' p='8px' pb={pb}>
             <Box pb={pb}>
-                <Text fontSize={fsTitle} fontWeight={fw}>ID</Text>
+                <Text fontSize={fsTitle} fontWeight={fw} mb="1px">ID</Text>
                 <Text fontSize={fsValue} fontWeight={fw2}>{id}</Text>
             </Box>
             <Box pb={pb}>
-                <Text fontSize={fsTitle} fontWeight={fw}>Team Name</Text>
+                <Text fontSize={fsTitle} fontWeight={fw} mb="2px">Team Name</Text>
                 <Text fontSize={fsValue} fontWeight={fw2}>{teamName}</Text>
             </Box>
             <Box pb={pb}>
@@ -64,7 +64,6 @@ export default function Data({id, teamName, teamCategory, pb}) {
                   <option value='Low-carbon AI'>Low-carbon AI</option>
               </Select>
                 </Box>
-
             </Box>
         </Flex>
     )

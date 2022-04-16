@@ -65,7 +65,7 @@ export default function Submission({team}) {
         <Box>
             <Box borderRadius='0.3em' border='2px' borderColor='secondary.gray' px='16px' py='12px'>
                 <Text fontSize={['0.6em', '0.8em', '0.8em', '0.8em']}>
-                Submit your file! (Make sure you have picked your category correctly in the team member page and your file is not more than 20MB)
+                Submit your file! (Make sure you have picked your category correctly in the team member page and your file isn&apos;t more than 20MB)
                 </Text>
                 <Flex alignItems='center' mt='10px'>
                     <Square bg='secondary.blue' borderRadius='0.6em' cursor='pointer' onClick={() => fileRef.current.click()} fontSize={['0.5em', '0.7em', '0.7em', '0.7em']} color='white' px='22px' py='7px'>

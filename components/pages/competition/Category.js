@@ -3,31 +3,47 @@ import { Flex, Text } from "@chakra-ui/react";
 const SquareTemp = ({title, desc}) => {
     return(
         <Flex 
+        position={"relative"}
         cursor="pointer"
         flexDirection={"column"}
         justifyContent="center"
         alignItems="center"
         bg="gray.100"
-        border="2px solid #1C1D60"
-        borderRadius="1em"
-        w="17em"
-        // sx={{
-        //     borderImage: "linear-gradient(to right, #EB222A , #1C1D60)",
-        //     borderImageSlice: 1,
-        //     borderRadius: "inherit"
 
-        // }}
-        h="11em"
-        p={"1em"}
-        m="1.6em"
+        borderRadius={"1em"}
+        w={["10em", "17em"]}
+        h={["10em", "11em"]}
+        p={["0.5em", "1em"]}
+        my="1.6em"
+        mx={["0.2em", "1.6em"]}
         mt="0" 
         textAlign="center"
         _hover={{
             bg:"gray.200",
         }}
         >
-            <Text fontSize={"1.2em"} mb="5px">{title}</Text>
-            <Text fontSize={"0.6em"}>{desc}</Text>
+            <Flex 
+            zIndex={"-10"}
+            position={"absolute"}
+            borderRadius={"1em"}
+            w={["10.17em", "17.2em"]}
+            h={["10.25em", "11.2em"]}
+            bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+            >
+            
+            </Flex>
+            <Text 
+            color={"primary.blue"}
+            fontFamily={"coolvetica"}
+            fontSize={["0.8em", "1.2em"]} 
+            mb={["9px", "5px"]}>
+            {title}
+            </Text>
+            <Text 
+            fontSize={["0.4em", "0.6em"]}
+            textAlign="justify">
+            {desc}
+            </Text>
         </Flex>
     )
 }
@@ -55,15 +71,15 @@ export default function Category() {
     }]
 
     return(
-        <Flex flexDirection={"column"} alignItems={"center"} py="2em">
+        <Flex flexDirection={"column"} alignItems={"center"} py={["1.6em", "2em"]}>
             <Text
             mb="2em"
-            fontSize={"2em"}
+            fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
             color={"primary.red"}>
                 Category
             </Text>
-            <Flex flexWrap={"wrap"} justifyContent={"center"} px="4em" maxW={"70em"}>
+            <Flex flexWrap={"wrap"} justifyContent={"center"} px={["0", "4em"]} maxW={"70em"}>
                 {content.map((data, id) => {
                     return(
                         <Flex key={id} flexWrap={"wrap"}>
