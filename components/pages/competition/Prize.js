@@ -2,8 +2,8 @@ import { Box, Flex, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 
 const Place = ({caption, description}) => {
     return(
-        <Flex justifyContent={"center"} alignItems={"center"} h={["10em", "33%"]} >
-            <Flex h={["40px", "60px"]} w={["3em", "5.7em"]}>
+        <Flex color={"primary.blue"} justifyContent={"center"} alignItems={"center"} h={["10em", "33%"]} >
+            <Flex h={["40px", "60px"]} w={["3.5em", "5.7em"]}>
                 <img src="/assets/images/pattern/prize.png" alt="img" />
             </Flex>
             <Box>
@@ -46,7 +46,8 @@ export default function Prize() {
         <Flex w="full" flexDirection={"column"} justifyContent={"center"} alignItems="center">
             <Text
             fontSize={["1.6em", "2.4em"]}
-            fontWeight="semibold"
+            fontFamily={"coolvetica"}
+            fontWeight="medium"
             color="primary.red"
             py="0.7em">
                 Prize

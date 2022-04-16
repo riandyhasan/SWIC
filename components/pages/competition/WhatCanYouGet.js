@@ -28,9 +28,10 @@ export default function WhatCanYouGet() {
     return(
         <Flex flexDirection={"column"} alignItems={"center"} pt={["1.6em", "3em"]}>
             <Text
+            fontFamily={"coolvetica"}
+            fontWeight="medium"
             mb="2em"
             fontSize={["1.6em", "2.4em"]}
-            fontWeight="bold"
             color={"primary.red"}>
                 What Can You Get
             </Text>

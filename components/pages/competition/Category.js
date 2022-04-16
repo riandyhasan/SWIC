@@ -3,17 +3,17 @@ import { Flex, Text } from "@chakra-ui/react";
 const SquareTemp = ({title, desc}) => {
     return(
         <Flex 
+        position={"relative"}
         flexDirection={"column"}
         justifyContent="center"
         alignItems="center"
         bg="gray.100"
         borderRadius={"1em"}
-        border="2px"
+        // border="2px"
         w={["10em", "17em"]}
-        sx={{
-            borderColor: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
-        }}
-        borderColor={"red"}
+        // sx={{
+        //     borderColor: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
+        // }}
         h={["10em", "11em"]}
         p={["0.5em", "1em"]}
         my="1.6em"
@@ -24,6 +24,19 @@ const SquareTemp = ({title, desc}) => {
             bg:"gray.200",
         }}
         >
+            <Flex 
+            // sx={{
+            //     bg: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
+            // }}
+            zIndex={"-10"}
+            position={"absolute"}
+            borderRadius={"1em"}
+            w={["10.17em", "17.2em"]}
+            h={["10.25em", "11.2em"]}
+            bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+            >
+            
+            </Flex>
             <Text 
             color={"primary.blue"}
             fontFamily={"coolvetica"}

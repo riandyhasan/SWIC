@@ -12,7 +12,8 @@ export default function Jumbotron() {
           pl={["0.6em", "2em"]}
         >
           <Text 
-            fontWeight={"bold"} 
+          fontFamily={"coolvetica"}
+            fontWeight={"medium"} 
             fontSize={["1.6em", "2.4em"]}
             mb="0.2em"
           >Competition

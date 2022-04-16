@@ -46,7 +46,8 @@ export default function Timeline() {
             justifyContent={"center"}
         >
             <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} w={["80%", "70%"]}>
-                <Text fontSize={["1.6em", "2.4em"]} color="white" alignContent={"center"}>
+                <Text fontFamily={"coolvetica"}
+            fontWeight="medium" fontSize={["1.6em", "2.4em"]} color="white" alignContent={"center"}>
                     Timeline
                 </Text>
                 <Box w="full">
