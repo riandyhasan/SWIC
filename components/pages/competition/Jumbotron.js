@@ -9,23 +9,23 @@ export default function Jumbotron() {
           flexDirection="column"
           justifyContent="center"
           alignItems="start"
-          pl={"2em"}
+          pl={["0.6em", "2em"]}
         >
           <Text 
             fontWeight={"bold"} 
-            fontSize={"3em"}
+            fontSize={["1.6em", "2.4em"]}
             mb="0.2em"
           >Competition
           </Text>
-          <Countdown />
+          <Countdown isCompetition={true} />
           <Square
             fontSize="0.8em"
             cursor="pointer"
             color="black"
             mt="1.4em"
-            borderRadius="1.4em"
+            borderRadius={["1em", "1.4em"]}
             p="0.6em"
-            py="0.8em"
+            py={["0.3em", "0.8em"]}
             bg="secondary.yellow"
             w={["10em", "12em"]}
           >

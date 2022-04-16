@@ -9,22 +9,33 @@ const SquareTemp = ({title, desc}) => {
         bg="gray.100"
         borderRadius={"1em"}
         border="2px"
-        w="17em"
+        w={["10em", "17em"]}
         sx={{
             borderColor: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
         }}
         borderColor={"red"}
-        h="11em"
-        p={"1em"}
-        m="1.6em"
+        h={["10em", "11em"]}
+        p={["0.5em", "1em"]}
+        my="1.6em"
+        mx={["0.2em", "1.6em"]}
         mt="0" 
         textAlign="center"
         _hover={{
             bg:"gray.200",
         }}
         >
-            <Text fontSize={"1.2em"} mb="5px">{title}</Text>
-            <Text fontSize={"0.6em"}>{desc}</Text>
+            <Text 
+            color={"primary.blue"}
+            fontFamily={"coolvetica"}
+            fontSize={["0.8em", "1.2em"]} 
+            mb={["9px", "5px"]}>
+            {title}
+            </Text>
+            <Text 
+            fontSize={["0.4em", "0.6em"]}
+            textAlign="justify">
+            {desc}
+            </Text>
         </Flex>
     )
 }
@@ -51,15 +62,15 @@ export default function Category() {
     }]
 
     return(
-        <Flex flexDirection={"column"} alignItems={"center"} py="2em">
+        <Flex flexDirection={"column"} alignItems={"center"} py={["1.6em", "2em"]}>
             <Text
             mb="2em"
-            fontSize={"2em"}
+            fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
             color={"primary.red"}>
                 Category
             </Text>
-            <Flex flexWrap={"wrap"} justifyContent={"center"} px="4em" maxW={"70em"}>
+            <Flex flexWrap={"wrap"} justifyContent={"center"} px={["0", "4em"]} maxW={"70em"}>
                 {content.map((data, id) => {
                     return(
                         <Flex key={id} flexWrap={"wrap"}>

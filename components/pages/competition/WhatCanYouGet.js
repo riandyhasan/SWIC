@@ -1,9 +1,9 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 
 const SquareTemp = ({urlImg, description}) => {
-    return(
-        <Flex flexDirection={"column"} alignItems={"center"} w="14em" pb="2em"> 
-            <Box w="6em" mb="1.8em" >
+    return(//10 4
+        <Flex flexDirection={"column"} alignItems={"center"} w={["10em", "14em"]} pb="2em"> 
+            <Box w={["4em", "6em"]} mb="1.8em" >
                 <img src={urlImg} alt="img" />
             </Box>
             <Text px="0.6em" textAlign={"center"} fontSize={"0.8em"}>{description}</Text>
@@ -25,12 +25,11 @@ export default function WhatCanYouGet() {
         urlImg: "/assets/images/logo/logo-wcyg4.png",
         desc: "A chance to take part in our exclusive incubation"
     }]
-
     return(
-        <Flex flexDirection={"column"} alignItems={"center"} pt="3em">
+        <Flex flexDirection={"column"} alignItems={"center"} pt={["1.6em", "3em"]}>
             <Text
             mb="2em"
-            fontSize={"2em"}
+            fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
             color={"primary.red"}>
                 What Can You Get

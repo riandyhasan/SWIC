@@ -72,7 +72,7 @@ export default function FAQ() {
         w="full"
         mb="2em">
             <Text
-            fontSize={"2em"}
+            fontSize={["1.6em", "2.4em"]}
             fontWeight="semibold"
             color="primary.red"
             py="1em">
