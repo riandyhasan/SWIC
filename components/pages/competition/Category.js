@@ -4,16 +4,14 @@ const SquareTemp = ({title, desc}) => {
     return(
         <Flex 
         position={"relative"}
+        cursor="pointer"
         flexDirection={"column"}
         justifyContent="center"
         alignItems="center"
         bg="gray.100"
+
         borderRadius={"1em"}
-        // border="2px"
         w={["10em", "17em"]}
-        // sx={{
-        //     borderColor: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
-        // }}
         h={["10em", "11em"]}
         p={["0.5em", "1em"]}
         my="1.6em"
@@ -25,9 +23,6 @@ const SquareTemp = ({title, desc}) => {
         }}
         >
             <Flex 
-            // sx={{
-            //     bg: "linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)",
-            // }}
             zIndex={"-10"}
             position={"absolute"}
             borderRadius={"1em"}
@@ -56,7 +51,8 @@ const SquareTemp = ({title, desc}) => {
 export default function Category() {
     let content = [{
         title: "Accessible Healthcare",
-        desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?"
+        desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?",
+        href:""
     }, {
         title: "Inclusive Literacy",
         desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?"

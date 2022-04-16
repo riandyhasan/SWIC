@@ -18,13 +18,9 @@ export default function Profile({profile}) {
 
   const handleLogOut = () => {
     const auth = getAuth();
+    window.location.assign("/");
     signOut(auth)
-      .then(() => {
-        router.push("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // setTimeout(() => {  signOut(auth); }, 1000);
   };
 
   return (

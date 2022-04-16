@@ -3,10 +3,13 @@ import { Box } from "@chakra-ui/react";
 import Layout from "../components/navigation/Layout";
 import Jumbotron from "../components/pages/home/Jumbotron";
 import Benefits from "../components/pages/home/Benefits";
+import getProfile from "../services/profile/profile";
+import Loading from "../components/loading/Loading";
 import Sponsor from "../components/pages/home/Sponsor";
 
 export default function Home() {
-  return (
+  const profile = getProfile();
+  return !profile.loading ? (
     <Layout>
       <Head>
         <title>SWIC</title>
@@ -19,10 +22,12 @@ export default function Home() {
         bgSize="cover"
         pb="5rem"
       >
-        <Jumbotron />
+        <Jumbotron profile={profile} />
         <Benefits />
         {/* <Sponsor /> */}
       </Box>
     </Layout>
-  );
+  ) : (
+    <Loading/>
+  )
 }

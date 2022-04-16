@@ -2,14 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCfvFPL3oSeM-C-E1hhuwfWXAQpmL1kUow",
-  authDomain: "swic-2d4c2.firebaseapp.com",
-  projectId: "swic-2d4c2",
-  storageBucket: "swic-2d4c2.appspot.com",
-  messagingSenderId: "244675206905",
-  appId: "1:244675206905:web:7a7c4df43ba668d09acc28",
-  measurementId: "G-ERK02KL9YV"
+  apiKey: "AIzaSyBXjg_oKfrxN0J_a8g0_Uik_anFq0OqJFY",
+  authDomain: "swic-dev-92afb.firebaseapp.com",
+  projectId: "swic-dev-92afb",
+  storageBucket: "swic-dev-92afb.appspot.com",
+  messagingSenderId: "183852797733",
+  appId: "1:183852797733:web:64ec8c6c22729548cb14cc",
+  measurementId: "G-W6G1LH9GHN"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
