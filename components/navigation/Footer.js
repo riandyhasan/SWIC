@@ -128,7 +128,7 @@ export default function Footer() {
       >
         <Flex flexDir={{base:"row", md:"column"}} gridGap="1rem">
           <a
-            href="https://www.instagram.com/ieeeitbsb"
+            href="https://www.instagram.com/swic.t20/"
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none" }}
@@ -141,7 +141,7 @@ export default function Footer() {
             </Flex>
           </a>
           <a
-            href="https://www.linkedin.com/company/ieee-itb-student-branch/mycompany/"
+            href="https://www.linkedin.com/company/t20solutions/"
             target="_blank"
             rel="noreferrer"
             style={{ textDecoration: "none" }}
