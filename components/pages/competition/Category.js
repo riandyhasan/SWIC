@@ -31,7 +31,7 @@ const SquareTemp = ({title, desc, show, setShow, href}) => {
         >
             <Text fontSize={"1.2em"} mb="5px">{title}</Text>
             <Text fontSize={"0.6em"}>{desc}</Text>
-            {show ? <a href={href} target="_blank" rel="noopener"><Heading fontFamily="Coolvetica" fontWeight="normal" color="white" cursor="pointer" >View Case</Heading></a> : null}
+            {show ? <a href={href} target="_blank" rel="noreferrer"><Heading fontFamily="Coolvetica" fontWeight="normal" color="white" cursor="pointer" >View Case</Heading></a> : null}
         </Flex>
     )
 }
