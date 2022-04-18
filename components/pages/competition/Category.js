@@ -1,49 +1,72 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, useBoolean } from "@chakra-ui/react";
 
 const SquareTemp = ({title, desc}) => {
+    const [viewCase, setViewCase] = useBoolean();
+
     return(
-        <Flex 
-        position={"relative"}
-        cursor="pointer"
-        flexDirection={"column"}
+        <Flex
+        p="2px"
+        mb="1em"
+        mx={["0.2em", "1.6em"]}
         justifyContent="center"
         alignItems="center"
-        bg="gray.100"
-
         borderRadius={"1em"}
-        w={["10em", "17em"]}
-        h={["10em", "11em"]}
-        p={["0.5em", "1em"]}
-        my="1.6em"
-        mx={["0.2em", "1.6em"]}
-        mt="0" 
-        textAlign="center"
-        _hover={{
-            bg:"gray.200",
-        }}
+        bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+        onMouseEnter={setViewCase.on}
+        onMouseLeave={setViewCase.off}
         >
             <Flex 
-            zIndex={"-10"}
-            position={"absolute"}
+            position={"relative"}
+            cursor="pointer"
+            flexDirection={"column"}
+            justifyContent="center"
+            alignItems="center"
+            bg="gray.100"
+
             borderRadius={"1em"}
-            w={["10.17em", "17.2em"]}
-            h={["10.25em", "11.2em"]}
-            bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+            w={["10em", "17em"]}
+            h={["10em", "11em"]}
+            p={["0.5em", "1em"]}
+            mt="0" 
+            textAlign="center"
+            
+            transitionDuration='400ms'
+            transitionTimingFunction='ease-in-out'
             >
             
+                    <Flex
+                    top="0"
+                    w="full"
+                    h={viewCase ? "full" : "0"}
+                    opacity={viewCase ? "full" : "0"}
+                    position={"absolute"}
+                    borderRadius={"1em"}
+                    overflowY={"hidden"}
+                    justifyContent={"center"}
+                    alignItems="end"
+                    sx={{
+                        background: "linear-gradient(183.68deg, rgba(28, 29, 96, 0) -18.7%, #1C1D60 67.09%)"
+                    }}
+                    transitionDuration="400ms"
+                    transitionTimingFunction='ease-in-out'
+                    color={"white"}
+                    >
+                        <Text fontSize={"1.4em"} fontWeight="semibold" pb="12px">View Case</Text>
+                    </Flex>
+                
+                <Text 
+                color={"primary.blue"}
+                fontFamily={"coolvetica"}
+                fontSize={["0.8em", "1.2em"]} 
+                mb={["9px", "5px"]}>
+                {title}
+                </Text>
+                <Text 
+                fontSize={["0.4em", "0.6em"]}
+                textAlign="justify">
+                {desc}
+                </Text>
             </Flex>
-            <Text 
-            color={"primary.blue"}
-            fontFamily={"coolvetica"}
-            fontSize={["0.8em", "1.2em"]} 
-            mb={["9px", "5px"]}>
-            {title}
-            </Text>
-            <Text 
-            fontSize={["0.4em", "0.6em"]}
-            textAlign="justify">
-            {desc}
-            </Text>
         </Flex>
     )
 }
@@ -73,7 +96,7 @@ export default function Category() {
     return(
         <Flex flexDirection={"column"} alignItems={"center"} py={["1.6em", "2em"]}>
             <Text
-            mb="2em"
+            mb="1.2em"
             fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
             color={"primary.red"}>
