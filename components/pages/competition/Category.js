@@ -1,6 +1,6 @@
 import { Flex, Text, useBoolean } from "@chakra-ui/react";
 
-const SquareTemp = ({title, desc}) => {
+const SquareTemp = ({title, desc, href}) => {
     const [viewCase, setViewCase] = useBoolean();
 
     return(
@@ -17,7 +17,6 @@ const SquareTemp = ({title, desc}) => {
         >
             <Flex 
             position={"relative"}
-            cursor="pointer"
             flexDirection={"column"}
             justifyContent="center"
             alignItems="center"
@@ -34,8 +33,10 @@ const SquareTemp = ({title, desc}) => {
             transitionTimingFunction='ease-in-out'
             >
             
+                <a href={href} target="_blank" rel="noreferrer" cursor="pointer">
                     <Flex
-                    top="0"
+                    href={href}
+                    top="0" left={"0"}
                     w="full"
                     h={viewCase ? "full" : "0"}
                     opacity={viewCase ? "full" : "0"}
@@ -47,12 +48,13 @@ const SquareTemp = ({title, desc}) => {
                     sx={{
                         background: "linear-gradient(183.68deg, rgba(28, 29, 96, 0) -18.7%, #1C1D60 67.09%)"
                     }}
-                    transitionDuration="400ms"
+                    transitionDuration="300ms"
                     transitionTimingFunction='ease-in-out'
                     color={"white"}
-                    >
-                        <Text fontSize={"1.4em"} fontWeight="semibold" pb="12px">View Case</Text>
+                    >   
+                            <Text fontFamily={"coolvetica"} fontSize={["1.2em", "1.6em"]} fontWeight="medium" pb="12px">View Case</Text>
                     </Flex>
+                </a>
                 
                 <Text 
                 color={"primary.blue"}
@@ -72,25 +74,30 @@ const SquareTemp = ({title, desc}) => {
 }
 
 export default function Category() {
-    let content = [{
+   let content = [{
         title: "Accessible Healthcare",
         desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?",
-        href:""
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Healthcare.pdf?alt=media&token=052d4205-be88-4e21-af69-9cf0ab264543",
     }, {
         title: "Inclusive Literacy",
-        desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?"
+        desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?",
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Economy.pdf?alt=media&token=d96b9bb5-7fcc-4a95-8ea1-a6176a043c0d",
     }, {
         title: "Meaningful Connectivity",
-        desc: "How to provide low-cost reliable, and scalable connectivity to optimize off-grid rural eletrification solutions?"
+        desc: "How to provide low-cost reliable, and scalable connectivity to optimize off-grid rural eletrification solutions?",
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Energy%20Transition.pdf?alt=media&token=69203e59-8cbe-4987-bd55-72489088dd35",
     }, {
         title: "Solving Resistance for Preventative Medicine",
-        desc: "As Indonesia is approaching new area with Ibu Kota Nusantara (IKM), how digital healthcare can play significant role to sit urban's behavior towards preventative medicine through adequate access for all urban areas?"
+        desc: "As Indonesia is approaching new area with Ibu Kota Nusantara (IKM), how digital healthcare can play significant role to sit urban's behavior towards preventative medicine through adequate access for all urban areas?",
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Healthcare.pdf?alt=media&token=cd0cc80f-0ea3-4734-b108-533d57cfbf58",
     }, {
         title: "Decentralized Finance & Exchange",
-        desc: "How to enable De-Fi and DeX to play critical role in improving local business, especially SMEs, profitability?"
+        desc: "How to enable De-Fi and DeX to play critical role in improving local business, especially SMEs, profitability?",
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Economy.pdf?alt=media&token=91cd94dd-c1ae-4b2a-9285-f3251ffd3c7b",
     }, {
         title: "Low-carbon AI",
-        desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?"
+        desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?",
+        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Energy%20Transition.pdf?alt=media&token=7f570401-0632-4641-aafb-6e7ae9c58964",
     }]
 
     return(
@@ -106,7 +113,7 @@ export default function Category() {
                 {content.map((data, id) => {
                     return(
                         <Flex key={id} flexWrap={"wrap"}>
-                            <SquareTemp title={data.title} desc={data.desc}/>
+                            <SquareTemp title={data.title} desc={data.desc} href={data.href}/>
                         </Flex>
 
                     )
