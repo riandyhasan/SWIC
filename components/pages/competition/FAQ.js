@@ -19,7 +19,7 @@ const AccordionComp = ({caption, description}) => {
                 borderRadius="0.9em"
                 borderColor="white">
                     <Flex w="full"  alignItems={"center"}>
-                        <Text fontSize={"0.8em"} fontWeight="medium" fontFamily={"coolvetica"} pl="0.5em" color={"white"}>
+                        <Text textAlign={"left"} fontSize={["0.7em", "0.8em"]} fontWeight="medium" fontFamily={"coolvetica"} pl={["0.2em", "0.5em"]} color={"white"}>
                             {caption}
                         </Text>
                     </Flex>
@@ -30,7 +30,7 @@ const AccordionComp = ({caption, description}) => {
                     }                    
                 </AccordionButton>
             </h2>
-            <AccordionPanel color={"primary.blue"} px="2.5em" py="1.4em" fontSize={"0.8em"} borderBottomRadius={"0.9em"}>
+            <AccordionPanel color={"primary.blue"} px={["1.2em", "2.5em"]} py={["0.9em", "1.4em"]} fontSize={["0.7em", "0.8em"]} borderBottomRadius={"0.9em"}>
                 {description}            
             </AccordionPanel>
         </AccordionItem>
@@ -72,8 +72,9 @@ export default function FAQ() {
         w="full"
         mb="2em">
             <Text
-            fontSize={"2em"}
-            fontWeight="semibold"
+            fontFamily={"coolvetica"}
+            fontWeight="medium"
+            fontSize={["1.6em", "2.4em"]}
             color="primary.red"
             py="1em">
                 FAQ
