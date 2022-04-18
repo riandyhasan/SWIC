@@ -1,6 +1,8 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, useBoolean } from "@chakra-ui/react";
 
 const SquareTemp = ({title, desc}) => {
+    const [viewCase, setViewCase] = useBoolean();
+
     return(
         <Flex
         p="2px"
@@ -10,6 +12,8 @@ const SquareTemp = ({title, desc}) => {
         alignItems="center"
         borderRadius={"1em"}
         bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+        onMouseEnter={setViewCase.on}
+        onMouseLeave={setViewCase.off}
         >
             <Flex 
             position={"relative"}
@@ -25,10 +29,31 @@ const SquareTemp = ({title, desc}) => {
             p={["0.5em", "1em"]}
             mt="0" 
             textAlign="center"
-            _hover={{
-                bg:"gray.200",
-            }}
+            
+            transitionDuration='400ms'
+            transitionTimingFunction='ease-in-out'
             >
+            
+                    <Flex
+                    top="0"
+                    w="full"
+                    h={viewCase ? "full" : "0"}
+                    opacity={viewCase ? "full" : "0"}
+                    position={"absolute"}
+                    borderRadius={"1em"}
+                    overflowY={"hidden"}
+                    justifyContent={"center"}
+                    alignItems="end"
+                    sx={{
+                        background: "linear-gradient(183.68deg, rgba(28, 29, 96, 0) -18.7%, #1C1D60 67.09%)"
+                    }}
+                    transitionDuration="400ms"
+                    transitionTimingFunction='ease-in-out'
+                    color={"white"}
+                    >
+                        <Text fontSize={"1.4em"} fontWeight="semibold" pb="12px">View Case</Text>
+                    </Flex>
+                
                 <Text 
                 color={"primary.blue"}
                 fontFamily={"coolvetica"}
