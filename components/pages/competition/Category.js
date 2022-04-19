@@ -1,4 +1,4 @@
-import { Flex, Text, useBoolean } from "@chakra-ui/react";
+import { Flex, Square, Text, useBoolean } from "@chakra-ui/react";
 
 const SquareTemp = ({title, desc, href}) => {
     const [viewCase, setViewCase] = useBoolean();
@@ -52,14 +52,13 @@ const SquareTemp = ({title, desc, href}) => {
                     transitionTimingFunction='ease-in-out'
                     color={"white"}
                     >   
-                            <Text fontFamily={"coolvetica"} fontSize={["1.2em", "1.6em"]} fontWeight="medium" pb="12px">View Case</Text>
+                        <Text fontFamily={"coolvetica"} fontSize={["1.2em", "1.6em"]} fontWeight="medium" pb="14px">View Case</Text>
                     </Flex>
                 </a>
                 
                 <Text 
                 color={"primary.blue"}
                 fontFamily={"coolvetica"}
-                fontSize={["0.8em", "1.2em"]} 
                 mb={["9px", "5px"]}>
                 {title}
                 </Text>
@@ -103,12 +102,30 @@ export default function Category() {
     return(
         <Flex flexDirection={"column"} alignItems={"center"} py={["1.6em", "2em"]}>
             <Text
-            mb="1.2em"
             fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
             color={"primary.red"}>
                 Category
             </Text>
+            <a 
+            href="https://drive.google.com/file/d/1Wj8ncQFn86NE0KoRVDXsQxziiUzWYYbz/view?usp=sharing"
+            target="_blank" 
+            rel="noreferrer" 
+            cursor="pointer">
+                <Square
+                my="1.4em"
+                fontSize="0.8em"
+                cursor="pointer"
+                color="black"
+                borderRadius={["1em", "1.4em"]}
+                p="0.6em"
+                py={["0.3em", "0.5em"]}
+                bg="secondary.yellow"
+                w={["8em", "10em"]}
+                >
+                    Guidebook
+                </Square>
+            </a>
             <Flex flexWrap={"wrap"} justifyContent={"center"} px={["0", "4em"]} maxW={"70em"}>
                 {content.map((data, id) => {
                     return(
