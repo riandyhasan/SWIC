@@ -23,16 +23,16 @@ const SmallBox = ({isFirst, isLast, date, description}) => {
 
 export default function Timeline() {
     let timeline = [{
-        date: "10 April 2022 - 20 May 2022",
+        date: "13 April 2022 - 26 April 2022",
         description: "Partners confirmation, Roadshow, Opening Ceremony"
     }, {
-        date: "30 May 2022",
+        date: "04 June 2022",
         description: "Call for Abstracts - 1st Round Submission Period, 1st Round Assessment"
     }, {
-        date: "1 June 2022 - 21 June 2022",
+        date: "07 July 2022 - 02 September 2022",
         description: "Incubation Period, 2nd Round Assessment, Top 9 Announcement"
     }, {
-        date: "25 June 2022",
+        date: "05 September 2022",
         description: "Demo Day - T20 Indonesia Summit"
     }]
 
@@ -45,7 +45,7 @@ export default function Timeline() {
             bgSize="cover"
             justifyContent={"center"}
         >
-            <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} w={["80%", "70%"]}>
+            <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} w={["90%", "90%"]}>
                 <Text fontFamily={"coolvetica"}
             fontWeight="medium" fontSize={["1.6em", "2.4em"]} color="white" alignContent={"center"}>
                     Timeline
