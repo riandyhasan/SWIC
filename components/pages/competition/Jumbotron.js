@@ -19,21 +19,43 @@ export default function Jumbotron({profile}) {
           >Competition
           </Text>
           <Countdown isCompetition={true} />
-          <Link href={profile.data ? "/dashboard" : "/login"} style={{textDecoration:"none"}}>
-          <Square
-            fontSize="0.8em"
-            cursor="pointer"
-            color="black"
-            mt="1.4em"
-            borderRadius={["1em", "1.4em"]}
-            p="0.6em"
-            py={["0.3em", "0.8em"]}
-            bg="secondary.yellow"
-            w={["10em", "12em"]}
-          >
-            Register Now!
-          </Square>
-          </Link>
+          <Flex>
+            <Link href={profile.data ? "/dashboard" : "/login"} style={{textDecoration:"none"}}>
+              <Square
+              fontSize="0.8em"
+              cursor="pointer"
+              color="black"
+              mt="1.4em"
+              borderRadius={["1em", "1.4em"]}
+              p="0.6em"
+              py={["0.3em", "0.8em"]}
+              bg="secondary.yellow"
+              w={["8.2em", "10em"]}
+            >
+              Register Now!
+              </Square>
+            </Link>
+            <a 
+            href="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Guideline.pdf?alt=media&token=190ce64d-3a3d-4546-96d1-bd7bdef3e91a"
+            target="_blank" 
+            rel="noreferrer" 
+            cursor="pointer">
+              <Square
+              fontSize="0.8em"
+              cursor="pointer"
+              color="black"
+              mt="1.4em"
+              ml="6px"
+              borderRadius={["1em", "1.4em"]}
+              p="0.6em"
+              py={["0.3em", "0.8em"]}
+              bg="secondary.yellow"
+              w={["7em", "10em"]}
+            >
+              Guidebook
+              </Square>
+            </a>
+          </Flex>
         </Flex>
       </Flex>
     )

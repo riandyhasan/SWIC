@@ -10,10 +10,10 @@ const SmallBox = ({isFirst, isLast, date, description}) => {
                 </Box>
             </Flex>
             <Box  py={["18px", "16px"]} ml="2em" w={"full"} h="full">
-                <Box  borderRadius={"0.6em"} bg="white" w={"full"} h="full" py="0.4em" px={["1em", "2em"]}>
+                <Box  borderRadius={"0.6em"} bg="white" w={"full"} h="full" py="0.4em" px={["0.5em", "2em"]}>
                     <Box>
-                        <Text color="primary.red" fontSize={["0.6em", "0.8em"]} fontWeight="semibold">{date}</Text>
-                        <Text color="primary.blue" fontSize={["0.4em", "0.8em"]}>{description}</Text>
+                        <Text color="primary.red" fontSize={["0.7em", "0.8em"]} fontWeight="semibold">{date}</Text>
+                        <Text color="primary.blue" fontSize={["0.6em", "1em"]}>{description}</Text>
                     </Box>
                 </Box>
             </Box>
@@ -23,17 +23,29 @@ const SmallBox = ({isFirst, isLast, date, description}) => {
 
 export default function Timeline() {
     let timeline = [{
-        date: "13 April 2022 - 26 April 2022",
-        description: "Partners confirmation, Roadshow, Opening Ceremony"
+        date: "13 April 2022",
+        description: "1st Round Submission Period"
+    }, {
+        date: "26 April 2022",
+        description: "Opening Ceremony"
     }, {
         date: "04 June 2022",
-        description: "Call for Abstracts - 1st Round Submission Period, 1st Round Assessment"
+        description: "1st Round Assesment"
     }, {
-        date: "07 July 2022 - 02 September 2022",
-        description: "Incubation Period, 2nd Round Assessment, Top 9 Announcement"
+        date: "06 July 2022",
+        description: "Top 18 Semi-finalists Announcement"
     }, {
-        date: "05 September 2022",
-        description: "Demo Day - T20 Indonesia Summit"
+        date: "07 July 2022 - 21 August 2022",
+        description: "Incubation and Second Round Submission"
+    }, {
+        date: "22 August - 01 Sept 2022",
+        description: "Second Round Assessment"
+    }, {
+        date: "02 Sept 2022",
+        description: "Top 9 Announcement"
+    }, {
+        date: "05 Sept 2022",
+        description: "Demo Day and Top 3 Announcement"
     }]
 
     return(
@@ -45,7 +57,7 @@ export default function Timeline() {
             bgSize="cover"
             justifyContent={"center"}
         >
-            <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} w={["90%", "90%"]}>
+            <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} w={["80%", "70%"]}>
                 <Text fontFamily={"coolvetica"}
             fontWeight="medium" fontSize={["1.6em", "2.4em"]} color="white" alignContent={"center"}>
                     Timeline
