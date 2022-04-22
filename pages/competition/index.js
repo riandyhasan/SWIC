@@ -31,7 +31,7 @@ export default function Competition() {
         <WhatCanYouGet />
         <Category />
         <Timeline />
-        <Prize />
+        {/* <Prize /> */}
         {/* <Judges /> */}
         <FAQ />
     </Layout>
