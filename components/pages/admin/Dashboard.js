@@ -47,8 +47,8 @@ export default function Dashboard() {
     const [isOnSub, setIsOnSub] = useState(true);
     const [isOnReg, setIsOnReg] = useState(false);
     let px = ['2em', '2em', '2em', '5em']
-    let py = ['10px', '', '1em', '3em']
-    let h2 = ['31em', '32em', '20em', '24em']
+    let py = ['10px', '', '2em', '3em']
+    let h2 = ['31em', '32em', '26em', '28em']
     let fs = ["2em", "2em", "2em", "2.7em"]
 
     const onClickHandler = (e) => {
@@ -71,18 +71,18 @@ export default function Dashboard() {
         flexDirection={["column", "column", "row"]}
         w="full"
         h={["38vw"]}
-        minH={["50rem", "50rem", "35rem"]}
+        minH={["50rem", "50rem", "40rem"]}
         >
             <Image sx={{display: ["none", "none", "block"]}} src={"/assets/images/background/dashboard-admin1.png"} />
             <Image sx={{display: ["block", "block", "none"]}} maxH="8rem" objectFit={"cover"} src={"/assets/images/background/dashboard-top.png"} />
             <Image sx={{display: ["none", "none", "block"]}} src={"/assets/images/pattern/dashboard-center.png"} />
             <Image sx={{display: ["block", "block", "none"]}} src={"/assets/images/pattern/dashboard-horizontal.png"} />
-            <Box w='full' h='full' px={px} py={py}>
+            <Box w='full' h='full' px={px} py={py} overflow="scroll">
                 <Box w='full' h={h2}>
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Admin</Heading>
                     <Nav onClick={onClickHandler} isOnSub={isOnSub} isOnReg={isOnReg}/>
 
-                    <Box w={"full"} h="full" overflow="scroll">
+                    <Box h="full" overflow="scroll">
                         {isOnSub && <Submission />}
                         {isOnReg && <Registration />}
                     </Box>
