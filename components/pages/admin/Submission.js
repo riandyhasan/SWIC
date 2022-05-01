@@ -50,7 +50,7 @@ export default function Submission() {
         <Flex
         flexDirection={"column"}
         w="full"
-        minW={"50rem"}
+        minW={"39rem"}
         h={"full"}
         >
             <Box w="full" position="sticky" top={"0"} zIndex="10">

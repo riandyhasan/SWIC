@@ -47,7 +47,7 @@ export default function Dashboard() {
     const [isOnSub, setIsOnSub] = useState(true);
     const [isOnReg, setIsOnReg] = useState(false);
     let px = ['2em', '2em', '2em', '5em']
-    let py = ['10px', '', '2em', '3em']
+    let py = ['10px', '', '2em', '2em']
     let h2 = ['31em', '32em', '26em', '28em']
     let fs = ["2em", "2em", "2em", "2.7em"]
 
@@ -71,7 +71,7 @@ export default function Dashboard() {
         flexDirection={["column", "column", "row"]}
         w="full"
         h={["38vw"]}
-        minH={["50rem", "50rem", "40rem"]}
+        minH={["50rem", "50rem", "39rem", "42rem"]}
         >
             <Image sx={{display: ["none", "none", "block"]}} src={"/assets/images/background/dashboard-admin1.png"} />
             <Image sx={{display: ["block", "block", "none"]}} maxH="8rem" objectFit={"cover"} src={"/assets/images/background/dashboard-top.png"} />
@@ -79,6 +79,21 @@ export default function Dashboard() {
             <Image sx={{display: ["block", "block", "none"]}} src={"/assets/images/pattern/dashboard-horizontal.png"} />
             <Box w='full' h='full' px={px} py={py} overflow="scroll">
                 <Box w='full' h={h2}>
+                    <Flex justifyContent="flex-end">
+                        <Box
+                            textAlign="center"
+                            color="white"
+                            fontFamily="Inter, sans-serif"
+                            fontWeight={400}
+                            bg="#CB0E05"
+                            borderRadius="19px"
+                            px={["1.5rem", "2rem"]}
+                            py={["0.2rem", "0.4rem"]}
+                            cursor="pointer"
+                        >
+                            Log Out
+                        </Box>
+                    </Flex>
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Admin</Heading>
                     <Nav onClick={onClickHandler} isOnSub={isOnSub} isOnReg={isOnReg}/>
 
