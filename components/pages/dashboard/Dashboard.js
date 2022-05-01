@@ -1,5 +1,4 @@
-import { Box, Flex, Heading, Text, Grid, Square, GridItem, Input, Textarea } from "@chakra-ui/react"
-import Image from "next/image";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 import { useEffect, useState } from "react";
 import Notification from "./notification/Notification";
 import Submission from "./submission/Submission";
@@ -44,19 +43,6 @@ const Nav = ({onClick, isOnTeam, isOnNotif, isOnSub}) => {
         </Flex>
     )
 };
-
-// const useWindowSize = () => {
-//     const [width, setWidth] = useState();
-    
-//     useEffect(() => {
-//         const handleResize = () => {
-//             setWidth(window.innerWidth);
-//         };
-//         window.addEventListener("resize", handleResize);
-//         console.log(window.innerWidth);
-//     }, []);
-//     return width;
-// };
 
 const useDeviceSize = () => {
     const [width, setWidth] = useState(0);
@@ -108,7 +94,6 @@ export default function Dashboard({profile, team}) {
             default:
                 break;
         }
-        // console.log(e.target)
     }
     const getTeam = () => {
         let data = {};

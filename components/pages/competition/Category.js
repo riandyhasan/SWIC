@@ -104,28 +104,10 @@ export default function Category() {
             <Text
             fontSize={["1.6em", "2.4em"]}
             fontWeight="bold"
+            mb="10px"
             color={"primary.red"}>
                 Category
             </Text>
-            <a 
-            href="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Guideline.pdf?alt=media&token=190ce64d-3a3d-4546-96d1-bd7bdef3e91a"
-            target="_blank" 
-            rel="noreferrer" 
-            cursor="pointer">
-                <Square
-                my="1.4em"
-                fontSize="0.8em"
-                cursor="pointer"
-                color="black"
-                borderRadius={["1em", "1.4em"]}
-                p="0.6em"
-                py={["0.3em", "0.5em"]}
-                bg="secondary.yellow"
-                w={["8em", "10em"]}
-                >
-                    Guidebook
-                </Square>
-            </a>
             <Flex flexWrap={"wrap"} justifyContent={"center"} px={["0", "4em"]} maxW={"70em"}>
                 {content.map((data, id) => {
                     return(
