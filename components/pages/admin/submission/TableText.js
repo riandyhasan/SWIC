@@ -1,39 +1,62 @@
-import { Flex, Text, Square } from "@chakra-ui/react";
+import { useState } from "react";
+import { 
+    Square,   
+    Table,
+    Thead,
+    Tbody,
+    Tr,
+    Th,
+    Td,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
+    Flex,
+    Box,
+    Heading,
+    Image,
+    useToast,
+    Text,
+    Textarea
+} from "@chakra-ui/react";
 
-export default function TableText ({no, namaTim, url, py, border, bg}) {
+export default function TableText ({teams}) {
     return(        
-        <Flex
-        w="full"
-        justifyContent={"space-between"}
-        alignItems="center"
-        py={py}
-        pl="0.5em"
-        pr="2em"
-        bg={bg ? bg : ""}
-        color={"primary.blue"}
-        fontWeight={"semibold"}
-        borderBottom={border}
-        borderColor="secondary.purple"
-        position={"sticky"}
-        >
-            <Flex w={"10%"} justifyContent="center">
-                <Text>{no}</Text>
-            </Flex>
-            <Flex w={"60%"} justifyContent="center">
-                <Text>{namaTim}</Text>
-            </Flex>
-            <Flex w={"30%"} justifyContent="center">
-                {no == "No" ? <Text>Download Submission</Text>
-                :
+        <Table variant="simple">
+        <Thead bg="#D8D7D7" >
+          <Tr>
+            <Th color="#143061" textAlign="center">No</Th>
+            <Th color="#143061" textAlign="center">Name Tim</Th>
+            <Th color="#143061" textAlign="center">Download Submission</Th>
+  
+          </Tr>
+        </Thead>
+        <Tbody>
+        {teams.map((team, no) => (
+          <Tr key={no}>
+            <Td isNumeric color="#143061" fontWeight="bold" textAlign="center">{no+1}</Td>
+            <Td color="#143061" fontWeight="bold">{team.teamName}</Td>
+            {team.submission != "" ? 
+                <Td w="30%">
+                    <a href={team.submission} target="_blank" rel="noreferrer">
                 <Square
-                py="0.2em"
-                px="1.3em"
-                borderRadius={"1em"}
-                bg={"secondary.yellow"}
-                fontWeight="medium">
-                    Download
-                </Square>}
-            </Flex>
-        </Flex>
+                    py="0.2em"
+                    px="0.8em"
+                    borderRadius={"1em"}
+                    bg={"secondary.yellow"}
+                    fontWeight="medium">
+                        Download
+                    </Square>
+                    </a>
+                </Td>
+                :
+                <Td color="#143061" fontWeight="bold" textAlign="center">-</Td>
+            }
+          </Tr>
+          ))}
+        </Tbody>
+      </Table>
     )
 }

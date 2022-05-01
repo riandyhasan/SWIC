@@ -42,7 +42,8 @@ export default function AdditionalData({team, profile}) {
                         const docRef = doc(db, `team`, team.id);
                         await updateDoc(docRef, {
                             membersValidation: membersValidation,
-                            membersData: membersData
+                            membersData: membersData,
+                            isChecked: false 
                           });
                           toast({
                             title: "Data uploaded",

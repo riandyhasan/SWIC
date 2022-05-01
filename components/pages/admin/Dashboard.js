@@ -2,6 +2,11 @@ import { Flex, Box, Image, Text, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import Registration from "./Registration";
 import Submission from "./Submission";
+import {
+    getAuth,
+    signOut,
+  } from "firebase/auth";
+  import { useRouter } from "next/router";
 
 
 // IMPROVEMENT BISA DISATUIN SAMA NAV LAINNYA
@@ -43,7 +48,17 @@ const Nav = ({onClick, isOnSub, isOnReg}) => {
     )
 };
 
-export default function Dashboard() {
+export default function Dashboard({profile, users, teams}) {
+
+    const router = useRouter();
+
+    const handleLogOut = () => {
+      const auth = getAuth();
+      window.location.assign("/");
+      signOut(auth)
+      // setTimeout(() => {  signOut(auth); }, 1000);
+    };
+
     const [isOnSub, setIsOnSub] = useState(true);
     const [isOnReg, setIsOnReg] = useState(false);
     let px = ['2em', '2em', '2em', '5em']
@@ -66,6 +81,13 @@ export default function Dashboard() {
         }
     }
 
+    let teamSubmission = 0;
+    teams?.map((i) => {
+        if(i.submission != ""){
+            teamSubmission += 1;
+        }
+    });
+
     return(
         <Flex
         flexDirection={["column", "column", "row"]}
@@ -77,7 +99,7 @@ export default function Dashboard() {
             <Image sx={{display: ["block", "block", "none"]}} maxH="8rem" objectFit={"cover"} src={"/assets/images/background/dashboard-top.png"} />
             <Image sx={{display: ["none", "none", "block"]}} src={"/assets/images/pattern/dashboard-center.png"} />
             <Image sx={{display: ["block", "block", "none"]}} src={"/assets/images/pattern/dashboard-horizontal.png"} />
-            <Box w='full' h='full' px={px} py={py} overflow="scroll">
+            <Box w='full' h='full' px={px} py={py} overflow="auto">
                 <Box w='full' h={h2}>
                     <Flex justifyContent="flex-end">
                         <Box
@@ -90,16 +112,24 @@ export default function Dashboard() {
                             px={["1.5rem", "2rem"]}
                             py={["0.2rem", "0.4rem"]}
                             cursor="pointer"
+                            onClick={handleLogOut}
                         >
                             Log Out
                         </Box>
-                    </Flex>
+                    </Flex >
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Admin</Heading>
+                    <Flex w="100%" justifyContent="flex-end">
+                        <Box>
+                          <Text color='primary.red' fontWeight='bold'> Registered users: {users.length}</Text>
+                            <Text color='primary.red' fontWeight='bold'>Registered teams: {teams.length}</Text>
+                            <Text color='primary.red' fontWeight='bold'>Team submissions: {teamSubmission}</Text>
+                        </Box>
+                    </Flex>
                     <Nav onClick={onClickHandler} isOnSub={isOnSub} isOnReg={isOnReg}/>
 
-                    <Box h="full" overflow="scroll">
-                        {isOnSub && <Submission />}
-                        {isOnReg && <Registration />}
+                    <Box h="80%" overflow="auto">
+                        {isOnSub && <Submission teams={teams} />}
+                        {isOnReg && <Registration teams={teams} />}
                     </Box>
                 </Box>
             </Box>
