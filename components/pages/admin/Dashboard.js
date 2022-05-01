@@ -11,8 +11,8 @@ import {
 
 // IMPROVEMENT BISA DISATUIN SAMA NAV LAINNYA
 const Nav = ({onClick, isOnSub, isOnReg}) => {
-    let fs = ["0.7em", "0.7em", "0.7em", "1em"]
-    let w = ['12em', '18rem', '18rem', '20rem']
+    let fs = ["0.8em", "0.9em", "1em", "1em"]
+    let w = ['12em', '15rem', '16rem', '18rem']
 
     const MiniNav = ({id, name, isOn}) => {
         return(
@@ -62,7 +62,7 @@ export default function Dashboard({profile, users, teams}) {
     const [isOnSub, setIsOnSub] = useState(true);
     const [isOnReg, setIsOnReg] = useState(false);
     let px = ['2em', '2em', '2em', '5em']
-    let py = ['10px', '', '2em', '2em']
+    let py = ['1.3em', '1.3em', '2em', '2em']
     let h2 = ['31em', '32em', '26em', '28em']
     let fs = ["2em", "2em", "2em", "2.7em"]
 
@@ -93,7 +93,7 @@ export default function Dashboard({profile, users, teams}) {
         flexDirection={["column", "column", "row"]}
         w="full"
         h={["38vw"]}
-        minH={["50rem", "50rem", "39rem", "42rem"]}
+        minH={["48rem", "48rem", "39rem", "42rem"]}
         >
             <Image sx={{display: ["none", "none", "block"]}} src={"/assets/images/background/dashboard-admin1.png"} />
             <Image sx={{display: ["block", "block", "none"]}} maxH="8rem" objectFit={"cover"} src={"/assets/images/background/dashboard-top.png"} />
@@ -104,6 +104,7 @@ export default function Dashboard({profile, users, teams}) {
                     <Flex justifyContent="flex-end">
                         <Box
                             textAlign="center"
+                            fontSize={["0.9em", "1em"]}
                             color="white"
                             fontFamily="Inter, sans-serif"
                             fontWeight={400}
@@ -119,10 +120,10 @@ export default function Dashboard({profile, users, teams}) {
                     </Flex >
                     <Heading color='primary.red' fontWeight='medium' fontSize={fs}>Admin</Heading>
                     <Flex w="100%" justifyContent="flex-end">
-                        <Box>
-                          <Text color='primary.red' fontWeight='bold'> Registered users: {users.length}</Text>
-                            <Text color='primary.red' fontWeight='bold'>Registered teams: {teams.length}</Text>
-                            <Text color='primary.red' fontWeight='bold'>Team submissions: {teamSubmission}</Text>
+                        <Box fontSize={["0.8em", "1em"]} color="primary.red" fontFamily="coolvetica">
+                            <Text> Registered users: {users.length}</Text>
+                            <Text>Registered teams: {teams.length}</Text>
+                            <Text>Team submissions: {teamSubmission}</Text>
                         </Box>
                     </Flex>
                     <Nav onClick={onClickHandler} isOnSub={isOnSub} isOnReg={isOnReg}/>

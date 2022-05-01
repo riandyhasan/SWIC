@@ -70,34 +70,38 @@ function VerifyDeny({id, onOpen, setType, setVerifySubmit, setDenySubmit, setIDS
     return(
         <>
         <Td>
-        <Square
-            id="verify"
-            onClick={clickHandler}
-            cursor={"pointer"}
-            border="2px"
-            borderColor={"primary.blue"}
-            bg={verify && "primary.blue"}
-            w="1.5em"
-            h="1.5em"
-            borderRadius={"0.3em"}>
-                <AiOutlineCheck id="verify" color="white"/>
-            </Square>
+          <Flex justifyContent="center">
+            <Square
+                id="verify"
+                onClick={clickHandler}
+                cursor={"pointer"}
+                border="2px"
+                borderColor={"primary.blue"}
+                bg={verify && "primary.blue"}
+                w="1.5em"
+                h="1.5em"
+                borderRadius={"0.3em"}>
+                    <AiOutlineCheck id="verify" color="white"/>
+              </Square>
+          </Flex>
+        </Td>
+        <Td >
+        <Flex justifyContent="center">
+          <Square
+              id="deny"
+              onClick={clickHandler}
+              cursor={"pointer"}
+              border="2px"
+              borderColor={"primary.red"}
+              bg={deny && "primary.red"}
+              w="1.5em"
+              h="1.5em"
+              borderRadius={"0.3em"}>
+                  <AiOutlineClose id="deny" color="white" />
+          </Square>
+        </Flex>
         </Td>
         <Td>
-        <Square
-            
-            onClick={clickHandler}
-            cursor={"pointer"}
-            border="2px"
-            borderColor={"primary.red"}
-            bg={deny && "primary.red"}
-            w="1.5em"
-            h="1.5em"
-            borderRadius={"0.3em"}>
-                <AiOutlineClose id="deny" color="white" />
-            </Square>
-        </Td>
-                <Td>
         <Square
         cursor="pointer"
             py="0.2em"
@@ -261,24 +265,24 @@ export default function TableText ({teams}) {
     return(
         <>
 <ModalSubmit  isOpen={isOpen} onClose={onClose} type={type} reason={reason} setReason={setReason} writeToFirebase={writeToFirebase} />
-  <Table variant="simple" w="100%">
-    <Thead bg="#D8D7D7" >
+  <Table variant="simple" minW="67em"> 
+    <Thead bg="#D8D7D7">
       <Tr>
-        <Th color="#143061" textAlign="center">No</Th>
-        <Th color="#143061" textAlign="center">Name Tim</Th>
-        <Th color="#143061" textAlign="center">ID Card Member 1</Th>
-        <Th color="#143061" textAlign="center">ID Card Member 2</Th>
-        <Th color="#143061" textAlign="center">ID Card Member 3</Th>
-        <Th color="#143061" textAlign="center">Verify</Th>
-        <Th color="#143061" textAlign="center">Deny</Th>
-        <Th color="#143061" textAlign="center">Action</Th>
+        <Th color="#143061" textAlign="center" >No</Th>
+        <Th color="#143061" textAlign="center" >Team Name</Th>
+        <Th color="#143061" textAlign="center" >ID </Th>
+        <Th color="#143061" textAlign="center" >ID Card Member 2</Th>
+        <Th color="#143061" textAlign="center" >ID Card Member 3</Th>
+        <Th color="#143061" textAlign="center" >Verify</Th>
+        <Th color="#143061" textAlign="center" >Deny</Th>
+        <Th color="#143061" textAlign="center" >Action</Th>
       </Tr>
     </Thead>
     <Tbody>
     {teams.map((team, no) => (
         team.isChecked == false ? 
       <Tr key={no}>
-        <Td isNumeric color="#143061" fontWeight="bold">{no+1}</Td>
+        <Td isNumeric color="#143061" fontWeight="bold"><Text textAlign={"center"}>{no+1}</Text></Td>
         <Td color="#143061" fontWeight="bold">{team.teamName}</Td>
         {team.membersData.map((item) =>(
             item != "" ? 

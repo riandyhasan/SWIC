@@ -24,11 +24,11 @@ import {
 
 export default function TableText ({teams}) {
     return(        
-        <Table variant="simple">
+        <Table variant="simple" minW="30em">
         <Thead bg="#D8D7D7" >
           <Tr>
             <Th color="#143061" textAlign="center">No</Th>
-            <Th color="#143061" textAlign="center">Name Tim</Th>
+            <Th color="#143061" textAlign="center">Team Name</Th>
             <Th color="#143061" textAlign="center">Download Submission</Th>
   
           </Tr>
@@ -36,7 +36,7 @@ export default function TableText ({teams}) {
         <Tbody>
         {teams.map((team, no) => (
           <Tr key={no}>
-            <Td isNumeric color="#143061" fontWeight="bold" textAlign="center">{no+1}</Td>
+            <Td isNumeric color="#143061" fontWeight="bold" textAlign="center"><Text textAlign={"center"}>{no+1}</Text></Td>
             <Td color="#143061" fontWeight="bold">{team.teamName}</Td>
             {team.submission != "" ? 
                 <Td w="30%">
