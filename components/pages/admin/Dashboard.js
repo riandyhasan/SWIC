@@ -1,5 +1,6 @@
 import { Flex, Box, Image, Text, Heading } from "@chakra-ui/react";
 import { useState } from "react";
+import Registration from "./Registration";
 import Submission from "./Submission";
 
 
@@ -83,6 +84,7 @@ export default function Dashboard() {
 
                     <Box w={"full"} h="full" overflow="scroll">
                         {isOnSub && <Submission />}
+                        {isOnReg && <Registration />}
                     </Box>
                 </Box>
             </Box>

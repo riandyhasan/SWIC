@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
-import TableText from "./submission/TableText";
+import TableText from "./registration/TableText";
 
-export default function Submission() {
+export default function Registration() {
     const data = [{
         namaTim: "Tim2an",
         url: "test"
@@ -45,7 +45,7 @@ export default function Submission() {
         namaTim: "Tim2an",
         url: "test"
     }]
-
+    
     return(
         <Flex
         flexDirection={"column"}
@@ -64,5 +64,5 @@ export default function Submission() {
                 )
             })}
         </Flex>
-   )
+    )
 }
