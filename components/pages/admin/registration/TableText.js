@@ -270,7 +270,7 @@ export default function TableText ({teams}) {
       <Tr>
         <Th color="#143061" textAlign="center" >No</Th>
         <Th color="#143061" textAlign="center" >Team Name</Th>
-        <Th color="#143061" textAlign="center" >ID </Th>
+        <Th color="#143061" textAlign="center" >ID Card Member 1</Th>
         <Th color="#143061" textAlign="center" >ID Card Member 2</Th>
         <Th color="#143061" textAlign="center" >ID Card Member 3</Th>
         <Th color="#143061" textAlign="center" >Verify</Th>
