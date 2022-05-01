@@ -17,9 +17,6 @@ export default function DashboardPage() {
             <Head>
                 <title>SWIC | Dashboard</title>
             </Head>
-            {/* <Box w='100%'>
-                <Dashboard />
-            </Box> */}
             {profile.profiles.teamID && profile.profiles.teamID != "" ?
             <Dashboard profile={profile} team={teams.team} /> :
             <DashboardRegister user={users.user} team={teams.team} />

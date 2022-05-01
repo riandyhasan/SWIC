@@ -134,6 +134,7 @@ export default function Header({ ...props }) {
           </Link>
 
             :
+            !profile.profiles.admin?
           <Link href="/profile" style={{textDecoration:"none"}}>
             <Box
             bg={
@@ -157,6 +158,31 @@ export default function Header({ ...props }) {
             </Flex>
           </Box>
           </Link>
+          :
+
+          <Link href="/admin" style={{textDecoration:"none"}}>
+          <Box
+          bg={
+            router.pathname.includes("/admin")
+              ? "linear-gradient(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
+              : "primary.blue"
+          }
+          fontFamily="Coolvetica"
+          px="1rem"
+          py="0.65rem"
+          color="white"
+          borderRadius="40px"
+          cursor="pointer"
+        >
+          <Flex gridGap="1.2rem" alignItems="center">
+            <FaUserCircle size="1.5em"/>
+            <Text
+            fontSize="0.85em">
+               Admin
+            </Text>
+          </Flex>
+        </Box>
+        </Link>
             }
         </Stack>
       </Box>

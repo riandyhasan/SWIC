@@ -147,7 +147,8 @@ export default function DashboardRegister({user, team}) {
         membersData: ["", "", ""],
         isSubmit: false,
         submission: "",
-        teamCategory: teamCategory
+        teamCategory: teamCategory,
+        isChecked: false,
     });
     user.map((u) =>{
         if(leaderEmail == u.email|| member1Email == u.email || member2Email == u.email){
