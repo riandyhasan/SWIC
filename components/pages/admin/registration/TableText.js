@@ -32,8 +32,6 @@ export default function TableText ({no, namaTim, url, py, border, bg}) {
         onClose();
     };
 
-
-
     return(
         <Flex
         justifyContent={"space-between"}
