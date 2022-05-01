@@ -18,6 +18,7 @@ const theme = extendTheme({
       red: "#CB0E05",
       yellow: "#FFD600",
       gray: "#D8D7D7",
+      purple: "#A07F9B"
     },
   },
 });
