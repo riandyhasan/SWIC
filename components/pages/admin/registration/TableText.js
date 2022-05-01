@@ -33,6 +33,12 @@ function VerifyDeny({id, onOpen, setType, setVerifySubmit, setDenySubmit, setIDS
     const toast = useToast();
 
     const clickHandler = (e) => {
+        if (verify == true || deny == true) {
+          setVerify(false);
+          setDeny(false); 
+          setType("");
+          return;
+        }
         if (e.target.id == "verify") {
             setVerify(true);
             setDeny(false);
