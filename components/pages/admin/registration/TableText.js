@@ -37,7 +37,7 @@ function VerifyDeny({id, onOpen, setType, setVerifySubmit, setDenySubmit, setIDS
           setVerify(false);
           setDeny(false); 
           setType("");
-          return;
+          retu
         }
         if (e.target.id == "verify") {
             setVerify(true);

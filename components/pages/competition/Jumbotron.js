@@ -40,20 +40,6 @@ export default function Jumbotron({profile}) {
             target="_blank" 
             rel="noreferrer" 
             cursor="pointer">
-              <Square
-              fontSize="0.8em"
-              cursor="pointer"
-              color="black"
-              mt="1.4em"
-              ml="6px"
-              borderRadius={["1em", "1.4em"]}
-              p="0.6em"
-              py={["0.3em", "0.8em"]}
-              bg="secondary.yellow"
-              w={["7em", "10em"]}
-            >
-              Guidebook
-              </Square>
             </a>
           </Flex>
         </Flex>

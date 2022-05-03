@@ -11,6 +11,7 @@ import FAQ from "../../components/pages/competition/FAQ";
 import Category from "../../components/pages/competition/Category";
 import getProfile from "../../services/profile/profile";
 import Loading from "../../components/loading/Loading";
+import Guidebook from "../../components/pages/competition/Guidebook";
 
 export default function Competition() {
   const profile = getProfile();
@@ -29,6 +30,7 @@ export default function Competition() {
         <Jumbotron profile={profile} />
         </Box>
         <WhatCanYouGet />
+        <Guidebook />
         <Category />
         <Timeline />
         {/* <Prize /> */}
