@@ -23,14 +23,11 @@ const SmallBox = ({isFirst, isLast, date, description}) => {
 
 export default function Timeline() {
     let timeline = [{
-        date: "13 April 2022",
+        date: "13 April 2022 - 04 June 2022",
         description: "1st Round Submission Period"
     }, {
         date: "26 April 2022",
         description: "Opening Ceremony"
-    }, {
-        date: "04 June 2022",
-        description: "1st Round Assesment"
     }, {
         date: "06 July 2022",
         description: "Top 18 Semi-finalists Announcement"

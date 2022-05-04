@@ -35,12 +35,6 @@ export default function Jumbotron({profile}) {
               Register Now!
               </Square>
             </Link>
-            <a 
-            href="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Guideline.pdf?alt=media&token=190ce64d-3a3d-4546-96d1-bd7bdef3e91a"
-            target="_blank" 
-            rel="noreferrer" 
-            cursor="pointer">
-            </a>
           </Flex>
         </Flex>
       </Flex>

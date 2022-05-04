@@ -6,6 +6,7 @@ import Benefits from "../components/pages/home/Benefits";
 import getProfile from "../services/profile/profile";
 import Loading from "../components/loading/Loading";
 import Sponsor from "../components/pages/home/Sponsor";
+import Poster from "../components/pages/home/Poster";
 
 export default function Home() {
   const profile = getProfile();
@@ -20,10 +21,11 @@ export default function Home() {
         // bgImg="url('/assets/images/background/home.png')"
         bgRepeat="no-repeat"
         bgSize="cover"
-        pb="5rem"
+        pb="3rem"
       >
         <Jumbotron profile={profile} />
         <Benefits />
+        <Poster />
         {/* <Sponsor /> */}
       </Box>
     </Layout>

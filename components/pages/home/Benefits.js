@@ -34,16 +34,17 @@ export default function Benefits() {
   let s2 = ["0.5em", "2.5m", "4em", "0"];
   return (
     <Flex
+      mb="3rem"
       justifyContent="space-between"
       alignItems="center"
       color="white"
       mt={["0.6rem", "1em", "2em", "3em"]}
     >
-      <Square size={s} display={["none", "none", "none", "flex"]}>
+      <Square h="400px" display={["none", "none", "none", "flex"]}>
         <Image
           src="/assets/images/pattern/benefits-left.png"
           width={200}
-          height={500}
+          height={400}
         />
       </Square>
       <Flex justifyContent="center" w={s1} px={s2}>
@@ -60,11 +61,11 @@ export default function Benefits() {
           text="Empowering rural communities through transformation"
         />
       </Flex>
-      <Square size={s} display={["none", "none", "none", "flex"]}>
+      <Square h="400px" display={["none", "none", "none", "flex"]}>
         <Image
           src="/assets/images/pattern/benefits-right.png"
           width={200}
-          height={500}
+          height={400}
         />
       </Square>
     </Flex>
