@@ -1,5 +1,5 @@
 import { Flex, Text, Square } from "@chakra-ui/react";
-// import Link from "next/link";
+import Link from "next/link";
 import Countdown from "../home/Countdown";
 
 export default function Jumbotron({profile}) {
@@ -21,7 +21,7 @@ export default function Jumbotron({profile}) {
           </Text>
           <Countdown isCompetition={true} />
           <Flex>
-            <a style={{textDecoration:"none"}} href={profile.data ? "/dashboard" : "/login"} >
+            <Link href={profile.data ? "/dashboard" : "/login"} >
               <Square
               fontSize="0.8em"
               cursor="pointer"
@@ -35,7 +35,7 @@ export default function Jumbotron({profile}) {
             >
               Register Now!
               </Square>
-            </a>
+            </Link>
           </Flex>
         </Flex>
       </Flex>

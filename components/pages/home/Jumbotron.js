@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, Flex, Heading, Square } from "@chakra-ui/react";
-// import Link from "next/link";
+import Link from "next/link";
 import Countdown from "./Countdown";
 import Image from "next/image";
 
@@ -52,7 +52,7 @@ export default function Jumbotron({profile}) {
         </Box>
         <Countdown />
         <Flex justifyContent={["center", "center", "center", "start"]}>
-        <a style={{textDecoration:"none"}} href={profile.data ? "/dashboard" : "/login"} >
+        <Link href={profile.data ? "/dashboard" : "/login"} >
           <Square
             fontSize="0.8em"
             cursor="pointer"
@@ -66,7 +66,7 @@ export default function Jumbotron({profile}) {
           >
             Register Now!
           </Square>
-          </a>
+          </Link>
         </Flex>
       </Flex>
     </Flex>

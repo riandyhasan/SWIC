@@ -3,7 +3,7 @@ import { Box, Text, Heading, Flex, Stack } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { FaUserCircle } from "react-icons/fa";
-// import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import getProfile from "../../services/profile/profile"
@@ -59,13 +59,13 @@ export default function Header({ ...props }) {
       {...props}
     >
       <Box cursor="pointer" maxW="25vw">
-        <a style={{textDecoration:"none"}} href="/">
+        <Link href="/">
           <Image
             src="/assets/images/logo/logo-swic.png"
             height={64}
             width={130}
           />
-        </a>
+        </Link>
       </Box>
       <Box
         display={{ base: "block", md: "none" }}
@@ -88,7 +88,7 @@ export default function Header({ ...props }) {
             if (link.mode === 0 || (profile.data && link.mode === 1)){
             return(
             <Box key={link.name + "-nav"}>
-              <a style={{textDecoration:"none"}} href={link.path} key={link.name + "-nav"} >
+              <Link href={link.path} key={link.name + "-nav"} >
                 <Heading
                   fontSize="0.85em"
                   fontWeight={500}
@@ -107,14 +107,14 @@ export default function Header({ ...props }) {
                 >
                   {link.name}
                 </Heading>
-              </a>
+              </Link>
             </Box>
             );
             }
             return null;
           })}
           {!profile.data?
-          <a style={{textDecoration:"none"}} href="/login" >
+          <Link href="/login" >
             <Box
               bg={
                 router.pathname == "/login" || router.pathname == "/signup"
@@ -131,11 +131,11 @@ export default function Header({ ...props }) {
             >
               Login | Sign Up
             </Box>
-          </a>
+          </Link>
 
             :
             !profile.profiles.admin?
-          <a style={{textDecoration:"none"}} href="/profile" >
+          <Link href="/profile" >
             <Box
             bg={
               router.pathname.includes("/profile")
@@ -157,10 +157,10 @@ export default function Header({ ...props }) {
               </Text>
             </Flex>
           </Box>
-          </a>
+          </Link>
           :
 
-          <a style={{textDecoration:"none"}} href="/admin" >
+          <Link href="/admin" >
           <Box
           bg={
             router.pathname.includes("/admin")
@@ -182,7 +182,7 @@ export default function Header({ ...props }) {
             </Text>
           </Flex>
         </Box>
-        </a>
+        </Link>
             }
         </Stack>
       </Box>
