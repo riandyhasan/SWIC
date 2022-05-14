@@ -1,5 +1,6 @@
 import react from "react";
-import { Flex, Box, Square, Text, Image } from "@chakra-ui/react";
+import { Flex, Box, Square, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 const Template = (props) => {
   let s = ["4rem", "7rem", "9rem", "12rem"];
@@ -15,7 +16,7 @@ const Template = (props) => {
     >
       <Flex w="full" h={s} position="relative">
         <Image
-          src={props.src}
+          src={`/assets/images/logo/logo-${props.src}.png`}
           layout="fill"
           objectFit="contain"
         />
@@ -48,15 +49,15 @@ export default function Benefits() {
       </Square>
       <Flex justifyContent="center" w={s1} px={s2}>
         <Template
-          src="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Flogo-empathy.png?alt=media&token=52e473e7-9d76-4a9f-82eb-3c413375a547"
+          src="empathy"
           text="Bridging digital gap between income levels"
         />
         <Template
-          src="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Flogo-redcross.png?alt=media&token=e6ce573f-bcbc-44a2-b3a5-2e3b79035448"
+          src="redcross"
           text="Endeavoring accssible digital healthcare technology for all"
         />
         <Template
-          src="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Flogo-donation.png?alt=media&token=5a02ff8a-000a-46f7-a7c7-ae324e253a8b"
+          src="donation"
           text="Empowering rural communities through transformation"
         />
       </Flex>
