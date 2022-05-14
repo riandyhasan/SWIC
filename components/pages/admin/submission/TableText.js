@@ -29,6 +29,7 @@ export default function TableText ({teams}) {
           <Tr>
             <Th color="#143061" textAlign="center">No</Th>
             <Th color="#143061" textAlign="center">Team Name</Th>
+            <Th color="#143061" textAlign="center">Category</Th>
             <Th color="#143061" textAlign="center">Download Submission</Th>
   
           </Tr>
@@ -38,6 +39,7 @@ export default function TableText ({teams}) {
           <Tr key={no}>
             <Td isNumeric color="#143061" fontWeight="bold" textAlign="center"><Text textAlign={"center"}>{no+1}</Text></Td>
             <Td color="#143061" fontWeight="bold">{team.teamName}</Td>
+            <Td color="#143061" fontWeight="bold">{team.teamCategory}</Td>
             {team.submission != "" ? 
                 <Td w="30%">
                     <a href={team.submission} target="_blank" rel="noreferrer">
