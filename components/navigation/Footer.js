@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <Box
       as="footer"
-      bgImg="url('/assets/images/background/footer.png')"
+      bgImg="url('https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Ffooter.png?alt=media&token=8110477c-59ab-43c7-9076-cd4b08e92bf8')"
       bgRepeat="no-repeat"
       bgSize="cover"
       minW="100vw"

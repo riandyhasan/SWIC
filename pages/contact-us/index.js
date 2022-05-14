@@ -12,7 +12,7 @@ export default function ContactUs() {
       </Head>
       <Box
         w="100%"
-        bgImg="url('/assets/images/background/contact-us.png')"
+        bgImg="url('https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Fcontact-us.png?alt=media&token=2ca6fb26-dce5-406d-a41e-03ecf120b0fb')"
         bgRepeat="no-repeat"
         bgSize="cover"
       >

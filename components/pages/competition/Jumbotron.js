@@ -5,7 +5,7 @@ import Countdown from "../home/Countdown";
 export default function Jumbotron({profile}) {
     return (
         <Flex position="relative" justifyContent="start" h="40vw" color="white">
-        <img src="/assets/images/pattern/contact-us-left.png" alt="pattern" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Fcontact-us-left.png?alt=media&token=337947c4-ebc5-4282-ab9e-b6368948181a" alt="pattern" />
         <Flex
           flexDirection="column"
           justifyContent="center"

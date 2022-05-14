@@ -22,7 +22,7 @@ export default function Competition() {
       </Head>
       <Box
         w="100%"
-        bgImg="url('/assets/images/background/competition.png')"
+        bgImg="url('https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Fcompetition.png?alt=media&token=9ba69c59-a43e-4ce2-9992-88907a305bd1')"
         bgRepeat="no-repeat"
         bgSize="cover"
       >

@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Text, Flex, Heading, Square } from "@chakra-ui/react";
+import { Box, Text, Flex, Heading, Square, Image } from "@chakra-ui/react";
 import Link from "next/link";
 import Countdown from "./Countdown";
-import Image from "next/image";
 
 export default function Jumbotron({profile}) {
   return (
@@ -20,7 +19,7 @@ export default function Jumbotron({profile}) {
         mb={["1em", "2em", "2em", "0"]}
       >
         <Image
-          src={"/assets/images/pattern/jumbotron.png"}
+          src={"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Fjumbotron.png?alt=media&token=8a2019f2-4a40-4450-afb9-aa4178c6cf71"}
           width="500"
           height="250"
         />

@@ -49,7 +49,7 @@ export default function Timeline() {
         <Flex 
             py={["1em", "2em"]}
             w="100%"
-            bgImg="url('/assets/images/background/timeline.png')"
+            bgImg="url('https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/assets%2Fimages%2Ftimeline.png?alt=media&token=c8bf7f87-b697-4e6f-98d9-e820332fc5e7')"
             bgRepeat="no-repeat"
             bgSize="cover"
             justifyContent={"center"}
