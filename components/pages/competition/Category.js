@@ -1,19 +1,25 @@
 import { Flex, Square, Text, useBoolean } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+// const MotionFlex = motion(Flex);
 
 const SquareTemp = ({title, desc, href}) => {
     const [viewCase, setViewCase] = useBoolean();
 
     return(
         <Flex
+        sx={{
+            background: "linear(99.32deg, #EB222A 10%, #1C1D60) 57%",
+            animation: "gradient 15s ease infinite"
+        }}
         p="2px"
         mb="1em"
         mx={["0.2em", "1.6em"]}
         justifyContent="center"
         alignItems="center"
         borderRadius={"1em"}
-        bgGradient="linear(99.32deg, #EB222A 10.14%, #1C1D60 57.05%)"
-        onMouseEnter={setViewCase.on}
-        onMouseLeave={setViewCase.off}
+        // onMouseEnter={setViewCase.on}
+        // onMouseLeave={setViewCase.off}
         >
             <Flex 
             position={"relative"}
