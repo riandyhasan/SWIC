@@ -76,27 +76,27 @@ export default function Category() {
    let content = [{
         title: "Accessible Healthcare",
         desc: "How can rural residents obtain adequate healthcare services and equal treatment effortlessly?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Healthcare.pdf?alt=media&token=052d4205-be88-4e21-af69-9cf0ab264543",
+        href:"https://drive.google.com/file/d/137itQqK5n8dKu-93-3penYipMIqsqGcU/view?usp=sharing",
     }, {
         title: "Inclusive Literacy",
         desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Economy.pdf?alt=media&token=d96b9bb5-7fcc-4a95-8ea1-a6176a043c0d",
+        href:"https://drive.google.com/file/d/1Ao54MO-aSMDIfYln-o3XRuxlXV0V5ieP/view?usp=sharing",
     }, {
         title: "Meaningful Connectivity",
         desc: "How to provide low-cost reliable, and scalable connectivity to optimize off-grid rural eletrification solutions?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Rural%20Energy%20Transition.pdf?alt=media&token=69203e59-8cbe-4987-bd55-72489088dd35",
+        href:"https://drive.google.com/file/d/1DVzoA0bihrV_wrEZ0JkcJboBSNFoSyU0/view?usp=sharing",
     }, {
         title: "Solving Resistance for Preventative Medicine",
         desc: "As Indonesia is approaching new area with Ibu Kota Nusantara (IKM), how digital healthcare can play significant role to sit urban's behavior towards preventative medicine through adequate access for all urban areas?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Healthcare.pdf?alt=media&token=cd0cc80f-0ea3-4734-b108-533d57cfbf58",
+        href:"https://drive.google.com/file/d/1Ebhi-r0hsEj93M81D21SsdSlQH_KRH2l/view?usp=sharing",
     }, {
         title: "Decentralized Finance & Exchange",
         desc: "How to enable De-Fi and DeX to play critical role in improving local business, especially SMEs, profitability?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Economy.pdf?alt=media&token=91cd94dd-c1ae-4b2a-9285-f3251ffd3c7b",
+        href:"https://drive.google.com/file/d/1EP2GlcsIhDkzjR-mZaeuEuiJutQ5HdjD/view?usp=sharing",
     }, {
         title: "Low-carbon AI",
         desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?",
-        href:"https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Case%20Overview_Urban%20Energy%20Transition.pdf?alt=media&token=7f570401-0632-4641-aafb-6e7ae9c58964",
+        href:"https://drive.google.com/file/d/14u3wfXnvcrZLleITgEakZbafhhf4zX7a/view?usp=sharing",
     }]
 
     return(

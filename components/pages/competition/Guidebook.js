@@ -27,7 +27,7 @@ export default function Guidebook() {
                 <Image  w={["160px", "200px"]} src="/assets/images/background/guidebook.png" />
             </Flex>
             <a 
-            href="https://firebasestorage.googleapis.com/v0/b/swic-2d4c2.appspot.com/o/cases%2FSWIC_Guideline.pdf?alt=media&token=190ce64d-3a3d-4546-96d1-bd7bdef3e91a"
+            href="https://drive.google.com/file/d/1HmC4YQQIyaYRQtzWrChtXoywsLedXnTs/view?usp=sharing"
             target="_blank" 
             rel="noreferrer" 
             cursor="pointer">
