@@ -60,7 +60,7 @@ export default function FAQ() {
         </UnorderedList>
         // description: `\u2022 1st round submission (10 April 2022 - 10 May 2022)\n\u2022 Incubation (1 June 2022 - 21 June 2022)\u2022 Demo Day & Scale-up (25 June 2022)`
     }, {   
-        caption: "What makes SWICC 2022 Different from other competitions/challenges?",
+        caption: "What makes SWIC 2022 Different from other competitions/challenges?",
         description: "SWIC 2022 will be joined by globally recognized think tanks, institutions, and corporations to provide a compelling experience for the participants."
     }]
 
