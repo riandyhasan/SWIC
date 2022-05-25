@@ -80,7 +80,7 @@ export default function Category() {
     }, {
         title: "Inclusive Literacy",
         desc: "How to leverage existing education infrastructure to increase financial literacy for rural populations?",
-        href:"https://drive.google.com/file/d/1Ao54MO-aSMDIfYln-o3XRuxlXV0V5ieP/view?usp=sharing",
+        href:"https://drive.google.com/file/d/1TlEGDfz_BJwlihi7nFRDKhWepTrnlZ2r/view?usp=sharing",
     }, {
         title: "Meaningful Connectivity",
         desc: "How to provide low-cost reliable, and scalable connectivity to optimize off-grid rural eletrification solutions?",
