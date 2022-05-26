@@ -96,7 +96,7 @@ export default function Category() {
     }, {
         title: "Low-carbon AI",
         desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?",
-        href:"https://drive.google.com/file/d/14u3wfXnvcrZLleITgEakZbafhhf4zX7a/view?usp=sharing",
+        href:"https://drive.google.com/file/d/1youneJn-O3DHA5hUYDaIvtYSEdzs4Kir/view",
     }]
 
     return(
