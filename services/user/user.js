@@ -17,7 +17,7 @@ export default function getUsers() {
         }))
       );
       response.docs.map((doc) => {
-        console.log(doc.data());
+        // console.log(doc.data());
       })
       setLoading(false);
       setError(null);

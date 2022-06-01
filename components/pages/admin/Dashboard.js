@@ -48,7 +48,7 @@ const Nav = ({onClick, isOnSub, isOnReg}) => {
     )
 };
 
-export default function Dashboard({profile, users, teams}) {
+export default function Dashboard({users = [], teams = []}) {
 
     const router = useRouter();
 

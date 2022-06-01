@@ -29,7 +29,7 @@ export default function DashboardRegister({user, team}) {
   const [member1Email, setMember1Email] = useState("");
   const [member2Name, setMember2Name] = useState("");
   const [member2Email, setMember2Email] = useState("");
-  const [teamCategory, setTeamCategory] = useState({label:"Accessible Healthcare", value:"Accessible Healthcare"});
+  const [teamCategory, setTeamCategory] = useState("Accessible Healthcare");
   const router = useRouter();
   const toast = useToast();
 
