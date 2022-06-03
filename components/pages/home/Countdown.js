@@ -50,11 +50,9 @@ const TextCountdown = ({ p, tens, ones, isLoading, isCompetition }) => {
 export default function Countdown({isCompetition}) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const finishTime = new Date("June 4, 2022 23:59:59");
+  const finishTime = new Date("2022-06-04T23:59:59.000+07:00");
   const currtime = new Date();
-  const totalDays = Math.floor(
-    (finishTime.getTime() - currtime.getTime()) / 86400000
-  );
+
   const [time, setTime] = useState({});
 
   const count = () => {
