@@ -50,7 +50,7 @@ const TextCountdown = ({ p, tens, ones, isLoading, isCompetition }) => {
 export default function Countdown({isCompetition}) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const finishTime = new Date("2022-06-04");
+  const finishTime = new Date("June 4, 2022 23:59:59");
   const currtime = new Date();
   const totalDays = Math.floor(
     (finishTime.getTime() - currtime.getTime()) / 86400000
@@ -61,7 +61,7 @@ export default function Countdown({isCompetition}) {
     let ctime = (finishTime.getTime() - currtime.getTime()) / 1000;
 
     let day = Math.floor(ctime / 86400);
-    let hour = Math.floor((ctime - day * 86400) / 3600);
+    let hour = Math.floor((ctime - day * 86400) / 3600) ;
     let minute = Math.floor((ctime - day * 86400 - hour * 3600) / 60);
     let second = Math.floor(ctime - day * 86400 - hour * 3600 - minute * 60);
 
