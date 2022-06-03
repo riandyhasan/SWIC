@@ -26,7 +26,7 @@ export default function Information() {
             <RiPhoneFill size="1em" />
           </Circle>
           <Text fontWeight="medium" pl="0.5em" fontSize={fs2}>
-            Phone : (+62) 812 9898 4688
+            Phone : (+62) 811 1599 555
           </Text>
         </Flex>
         <Flex alignItems="center">
