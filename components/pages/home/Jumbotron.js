@@ -50,7 +50,6 @@ export default function Jumbotron({profile}) {
             vision.
           </Text>
         </Box>
-        // <Countdown />
         <Flex justifyContent={["center", "center", "center", "start"]}>
         <Link style={{ textDecoration: "none" }} href={profile.data ? "/dashboard" : "/login"} >
           <Square
