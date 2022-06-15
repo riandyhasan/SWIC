@@ -50,7 +50,7 @@ const TextCountdown = ({ p, tens, ones, isLoading, isCompetition }) => {
 export default function Countdown({isCompetition}) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const finishTime = new Date("2022-06-11T23:59:59.000+07:00");
+  const finishTime = new Date("2022-06-30T23:59:59.000+07:00");
   const currtime = new Date();
 
   const [time, setTime] = useState({});

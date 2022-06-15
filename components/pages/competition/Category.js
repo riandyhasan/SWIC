@@ -85,19 +85,21 @@ export default function Category() {
         title: "Meaningful Connectivity",
         desc: "How to provide low-cost reliable, and scalable connectivity to optimize off-grid rural eletrification solutions?",
         href:"https://drive.google.com/file/d/1DVzoA0bihrV_wrEZ0JkcJboBSNFoSyU0/view?usp=sharing",
-    }, {
-        title: "Solving Resistance for Preventative Medicine",
-        desc: "As Indonesia is approaching new area with Ibu Kota Nusantara (IKM), how digital healthcare can play significant role to sit urban's behavior towards preventative medicine through adequate access for all urban areas?",
-        href:"https://drive.google.com/file/d/1Ebhi-r0hsEj93M81D21SsdSlQH_KRH2l/view?usp=sharing",
-    }, {
-        title: "Decentralized Finance & Exchange",
-        desc: "How to enable De-Fi and DeX to play critical role in improving local business, especially SMEs, profitability?",
-        href:"https://drive.google.com/file/d/1EP2GlcsIhDkzjR-mZaeuEuiJutQ5HdjD/view?usp=sharing",
-    }, {
-        title: "Low-carbon AI",
-        desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?",
-        href:"https://drive.google.com/file/d/1youneJn-O3DHA5hUYDaIvtYSEdzs4Kir/view",
-    }]
+    }, 
+    // {
+    //     title: "Solving Resistance for Preventative Medicine",
+    //     desc: "As Indonesia is approaching new area with Ibu Kota Nusantara (IKM), how digital healthcare can play significant role to sit urban's behavior towards preventative medicine through adequate access for all urban areas?",
+    //     href:"https://drive.google.com/file/d/1Ebhi-r0hsEj93M81D21SsdSlQH_KRH2l/view?usp=sharing",
+    // }, {
+    //     title: "Decentralized Finance & Exchange",
+    //     desc: "How to enable De-Fi and DeX to play critical role in improving local business, especially SMEs, profitability?",
+    //     href:"https://drive.google.com/file/d/1EP2GlcsIhDkzjR-mZaeuEuiJutQ5HdjD/view?usp=sharing",
+    // }, {
+    //     title: "Low-carbon AI",
+    //     desc: "How applied AI and digitalization could improve clean energy product adaption to improve net zero emission pathaway time?",
+    //     href:"https://drive.google.com/file/d/1youneJn-O3DHA5hUYDaIvtYSEdzs4Kir/view",
+    // }
+    ]
 
     return(
         <Flex flexDirection={"column"} alignItems={"center"} py={["1.6em", "2em"]}>

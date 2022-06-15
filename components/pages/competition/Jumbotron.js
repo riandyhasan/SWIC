@@ -19,6 +19,7 @@ export default function Jumbotron({profile}) {
             mb="0.2em"
           >Competition
           </Text>
+          <Countdown isCompetition={true} />
           <Flex>
             <Link style={{ textDecoration: "none" }} href={profile.data ? "/dashboard" : "/login"} >
               <Square
