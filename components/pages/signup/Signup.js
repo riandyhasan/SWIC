@@ -537,7 +537,7 @@ export default function SignUp({user}) {
                 onChange={(e) => setCountry(e.target.value)}
               >
                 {COUNTRIES.map((c) => (
-                  <option value={c.name}>{c.name}</option>
+                  <option key={c.code} value={c.name}>{c.name}</option>
                 ))
                 }
               </Select>
