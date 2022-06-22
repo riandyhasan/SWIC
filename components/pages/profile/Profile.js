@@ -190,6 +190,24 @@ export default function Profile({profile}) {
             </Text>
             </Flex>
           </GridItem>
+          <GridItem>
+            <Flex flexDir="column" gridGap="0.2rem">
+            <Heading fontWeight={400}
+                color="primary.blue"
+                fontSize="1.3em"
+              >
+                Country
+            </Heading>
+            <Text
+                fontFamily="Inter, sans-serif"
+                fontWeight={400}
+                fontSize="1em"
+                color="#5B5F5F"
+            >
+                {profile ? profile.profiles.country ? profile.profiles.country : "-" : ""}
+            </Text>
+            </Flex>
+          </GridItem>
         </Grid>
         <Flex
           justifyContent="flex-start"

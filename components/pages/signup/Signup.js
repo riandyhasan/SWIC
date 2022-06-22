@@ -13,6 +13,7 @@ import {
   Text,
   Image,
   useToast,
+  Select
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -25,8 +26,9 @@ import {
   GoogleAuthProvider,
   getAdditionalUserInfo,
 } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
+import { COUNTRIES } from "../../../constant"
 
 export default function SignUp({user}) {
   const [email, setEmail] = useState("");
@@ -37,6 +39,7 @@ export default function SignUp({user}) {
   const [phone, setPhone] = useState("");
   const [institution, setInstitution] = useState("");
   const [majorfaculty, setMajorFaculty] = useState("");
+  const [country, setCountry] = useState("Indonesia");
   const toast = useToast();
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
@@ -114,6 +117,7 @@ export default function SignUp({user}) {
           phone: phone,
           institution: institution,
           majorfaculty: majorfaculty,
+          country: country,
           teamID: "",
         });
         toast({
@@ -138,6 +142,7 @@ export default function SignUp({user}) {
     }
   };
 
+
   const handleGoogleRegister = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -154,6 +159,7 @@ export default function SignUp({user}) {
               phone: user.phoneNumber ? user.phoneNumber : "",
               institution: "",
               majorfaculty: "",
+              country: "",
               teamID: "",
             });
             toast({
@@ -511,6 +517,30 @@ export default function SignUp({user}) {
                 value={majorfaculty}
                 onChange={(e) => setMajorFaculty(e.target.value)}
               />
+            </FormControl>
+          </GridItem>
+          <GridItem>
+            <FormControl isRequired>
+              <FormLabel
+                htmlFor="Country"
+                fontFamily="Coolvetica"
+                color="primary.blue"
+                fontSize="1.3em"
+              >
+                Country
+              </FormLabel>
+              <Select
+                id="country"
+                borderRadius="10px"
+                border="2px solid #D8D7D7"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              >
+                {COUNTRIES.map((c) => (
+                  <option value={c.name}>{c.name}</option>
+                ))
+                }
+              </Select>
             </FormControl>
           </GridItem>
         </Grid>
