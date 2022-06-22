@@ -11,6 +11,7 @@ import {
     Text,
     Image,
     useToast,
+    Select
 } from "@chakra-ui/react";
 import { db } from "../../../utils/firebase";
 import {
@@ -21,14 +22,16 @@ import {
 import { useRouter } from "next/router";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { doc, updateDoc } from "firebase/firestore";
+import { COUNTRIES } from "../../../constant"
 
 export default function EditProfile({profile}) {
-    const [email, setEmail] = useState(profile.profiles.email);
-    const [username, setUsername] = useState(profile.profiles.username);
-    const [name, setName] = useState(profile.profiles.name);
-    const [phone, setPhone] = useState(profile.profiles.phone);
-    const [institution, setInstitution] = useState(profile.profiles.institution);
-    const [majorfaculty, setMajorFaculty] = useState(profile.profiles.majorfaculty);
+  const [email, setEmail] = useState(profile?.profiles.email);
+  const [username, setUsername] = useState(profile?.profiles.username);
+  const [name, setName] = useState(profile?.profiles.name);
+  const [phone, setPhone] = useState(profile?.profiles.phone);
+  const [institution, setInstitution] = useState(profile?.profiles.institution);
+  const [majorfaculty, setMajorFaculty] = useState(profile?.profiles.majorfaculty);
+  const [country, setCountry] = useState(profile?.profiles.country);
   const router = useRouter();
   const toast = useToast();
 
@@ -52,7 +55,9 @@ export default function EditProfile({profile}) {
       !institution ||
       institution == "" ||
       !majorfaculty ||
-      majorfaculty == ""
+      majorfaculty == "" ||
+      !country ||
+      country == ""
     ) {
       errors = "Please fill the form!";
     }
@@ -96,6 +101,7 @@ export default function EditProfile({profile}) {
       phone: phone,
       institution: institution,
       majorfaculty: majorfaculty,
+      country: country,
     });
     updateProfile(auth.currentUser, {
       displayName: name
@@ -331,6 +337,30 @@ export default function EditProfile({profile}) {
                 value={majorfaculty}
                 onChange={(e) => setMajorFaculty(e.target.value)}
               />
+            </FormControl>
+          </GridItem>
+          <GridItem>
+            <FormControl isRequired>
+              <FormLabel
+                htmlFor="Country"
+                fontFamily="Coolvetica"
+                color="primary.blue"
+                fontSize="1.3em"
+              >
+                Country
+              </FormLabel>
+              <Select
+                id="country"
+                borderRadius="10px"
+                border="2px solid #D8D7D7"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              >
+                {COUNTRIES.map((c) => (
+                  <option value={c.name}>{c.name}</option>
+                ))
+                }
+              </Select>
             </FormControl>
           </GridItem>
         </Grid>
